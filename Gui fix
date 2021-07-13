@@ -59,9 +59,8 @@ autoattack.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattack.TextSize = 16.000
 autoattack.MouseButton1Down:connect(
     function()
-        loadstring(
-_G.on = 1
-while _G.on == 1 do
+    _G.on = 1
+    while _G.on == 1 do
     local args = {
         [1] = {
             [1] = "+FS6"
