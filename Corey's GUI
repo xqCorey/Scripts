@@ -47,7 +47,7 @@ MainFrame.Position = UDim2.new(0.103940405, 0, 0.255921245, 0)
 MainFrame.Size = UDim2.new(0, 601, 0, 406)
 MainFrame.Selectable = true
 MainFrame.Draggable = true
-MainFrame.Visible = false
+
 
 autoattack.Name = "auto attack"
 autoattack.Parent = MainFrame
