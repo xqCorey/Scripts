@@ -465,7 +465,7 @@ rankchanger.Position = UDim2.new(0, 416, 0, 267)
 rankchanger.Size = UDim2.new(0, 171, 0, 50)
 rankchanger.Font = Enum.Font.SourceSans
 rankchanger.Text = "Rank Changer"
-rankchanger.TextColor3 = Color3.fromRGB(3, 81, 239)
+rankchanger.TextColor3 = Color3.fromRGB(3, 81, 238)
 rankchanger.TextSize = 14.000
 rankchanger.MouseButton1Down:connect(
     function()
