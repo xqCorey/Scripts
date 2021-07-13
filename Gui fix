@@ -60,8 +60,51 @@ autoattack.TextSize = 16.000
 autoattack.MouseButton1Down:connect(
     function()
         loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/auto%20spam%20on", true)
-        )()
+_G.on = 1
+while _G.on == 1 do
+    local args = {
+        [1] = {
+            [1] = "+FS6"
+        }
+    }
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+    
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_SpherePunch",
+            [2] = Vector3.new(-808.782837, 250.059631, 749.671082)
+        }
+    }
+
+    Remote:FireServer(unpack(Arguments))
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_Punch",
+            [2] = "Left"
+        }
+    }
+
+    Remote:FireServer(unpack(Arguments))
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_Punch",
+            [2] = "Right"
+        }
+    }
+    wait()
+    Remote:FireServer(unpack(Arguments))
+end
     end
 )
 
