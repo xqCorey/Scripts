@@ -74,7 +74,7 @@ autoattack.MouseButton1Down:connect(
     local Arguments = {
         [1] = {
             [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(-808.782837, 250.059631, 749.671082)
+            [2] = Vector3.new(-64, 40.059631, 69.671082)
         }
     }
 
