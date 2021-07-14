@@ -57,7 +57,7 @@ autoattack.Text = "Auto Attack On"
 autoattack.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattack.TextSize = 16.000
 autoattack.MouseButton1Down:connect(function()
-	    _G.on = 1
+		    _G.on = 1
     while _G.on == 1 do
     local args = {
         [1] = {
@@ -65,7 +65,7 @@ autoattack.MouseButton1Down:connect(function()
         }
     }
     game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-    
+
     wait()
     local Remote = game.ReplicatedStorage["RemoteEvent"]
 
@@ -141,7 +141,7 @@ psychictoggle.Text = "Psychic Script Toggle"
 psychictoggle.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychictoggle.TextSize = 16.000
 psychictoggle.MouseButton1Down:connect(function()
-	function()
+		function()
        function reload()
 
 
@@ -185,7 +185,7 @@ local B = Main.Toggle({
 while wait() do
 
     if test then
-    
+
         for i,v in pairs(game.Players:GetPlayers()) do
         game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[Target]})
         game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
@@ -259,7 +259,7 @@ split.Text = "Split"
 split.TextColor3 = Color3.fromRGB(125, 64, 186)
 split.TextSize = 16.000
 split.MouseButton1Down:connect(function()
-	_G.on = 1
+		_G.on = 1
     while _G.on == 1
  do
 local args = {
@@ -382,7 +382,7 @@ opvoid.Text = "OP VOID"
 opvoid.TextColor3 = Color3.fromRGB(3, 81, 239)
 opvoid.TextSize = 14.000
 opvoid.MouseButton1Down:connect(function()
-	
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true))()
 end) 
 
 invisloop.Name = "invis loop"
