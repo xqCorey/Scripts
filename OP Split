@@ -1,0 +1,25 @@
+_G.on = 1
+    while _G.on == 1
+ do
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
+wait(0)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+
+hum.CFrame = CFrame.new(-273,281,1007)
+
+wait(.5)
+
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+
+wait(.5)
+
+hum.CFrame = CFrame.new(-367,15735,-11)
+end
