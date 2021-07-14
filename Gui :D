@@ -1,5 +1,5 @@
--- Gui to Lua
--- Version: 3.2
+-- Made by:
+-- Corey's Gui version 1.1
 
 -- Instances:
 
@@ -57,7 +57,51 @@ autoattack.Text = "Auto Attack On"
 autoattack.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattack.TextSize = 16.000
 autoattack.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/auto%20spam%20on", true))()
+	    _G.on = 1
+    while _G.on == 1 do
+    local args = {
+        [1] = {
+            [1] = "+FS6"
+        }
+    }
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+    
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_SpherePunch",
+            [2] = Vector3.new(-64, 40.059631, 69.671082)
+        }
+    }
+
+    Remote:FireServer(unpack(Arguments))
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_Punch",
+            [2] = "Left"
+        }
+    }
+
+    Remote:FireServer(unpack(Arguments))
+    wait()
+    local Remote = game.ReplicatedStorage["RemoteEvent"]
+
+    local Arguments = {
+        [1] = {
+            [1] = "Skill_Punch",
+            [2] = "Right"
+        }
+    }
+    wait()
+    Remote:FireServer(unpack(Arguments))
+end
 end)
 
 autorespawn.Name = "auto respawn "
@@ -97,7 +141,59 @@ psychictoggle.Text = "Psychic Script Toggle"
 psychictoggle.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychictoggle.TextSize = 16.000
 psychictoggle.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/Psychic%20Script.lua", true))()
+	function()
+       function reload()
+
+
+end
+
+
+local Target = ""
+local test = false
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = "Psychic_Script:\n(made by Corey)",
+    Style = 25.4,
+    SizeX = 280,
+    SizeY = 140,
+    Theme = "Light"
+})
+
+local Main = X.New({
+    Title = "Main"
+})
+
+local playerr = Main.TextField({
+    Text = "Player",
+    Callback = function(Value)
+         Target = Value
+        print(Target)
+    end
+})
+
+local B = Main.Toggle({
+    Text = "Pyschic spam",
+    Callback = function(Value)
+        test = Value
+    end,
+    Enabled = false
+})
+
+
+while wait() do
+
+    if test then
+    
+        for i,v in pairs(game.Players:GetPlayers()) do
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[Target]})
+        game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
+        end
+        print("test")
+        wait()
+    end
+end
 end)
 
 psychicall.Name = "psychic all"
@@ -163,7 +259,31 @@ split.Text = "Split"
 split.TextColor3 = Color3.fromRGB(125, 64, 186)
 split.TextSize = 16.000
 split.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/train%20fist",true))()
+	_G.on = 1
+    while _G.on == 1
+ do
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
+wait(0)
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+
+hum.CFrame = CFrame.new(-273,281,1007)
+
+wait(.5)
+
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+
+wait(.5)
+
+hum.CFrame = CFrame.new(-367,15735,-11)
+end
 end)
 
 psychicalloff.Name = "psychic all off"
@@ -262,7 +382,7 @@ opvoid.Text = "OP VOID"
 opvoid.TextColor3 = Color3.fromRGB(3, 81, 239)
 opvoid.TextSize = 14.000
 opvoid.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true))()
+	
 end) 
 
 invisloop.Name = "invis loop"
