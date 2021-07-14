@@ -1,5 +1,5 @@
 -- Made by:
--- Corey's Gui version 1.0
+-- Corey's Gui version 1.1
 
 -- Instances:
 
@@ -23,15 +23,15 @@ local invisloop = Instance.new("TextButton")
 local anothergui = Instance.new("TextButton")
 local antichatspy = Instance.new("TextButton")
 local rankchanger = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local togglegui = Instance.new("TextButton")
+local topBar = Instance.new("TextLabel")
+local speccybutton = Instance.new("TextButton")
 local speccyFrame = Instance.new("Frame")
-local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
 local cmdx = Instance.new("TextButton")
 local infyield = Instance.new("TextButton")
 local DanceScripts = Instance.new("TextButton")
-local speccybutton = Instance.new("TextButton")
 local Close = Instance.new("TextButton")
+local togglegui = Instance.new("TextButton")
 
 --Properties:
 
@@ -43,10 +43,9 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 MainFrame.BorderColor3 = Color3.fromRGB(53, 53, 53)
-MainFrame.Position = UDim2.new(0.103940405, 0, 0.255921245, 0)
+MainFrame.Position = UDim2.new(0.160626456, 0, 0.18879953, 0)
 MainFrame.Size = UDim2.new(0, 601, 0, 406)
-MainFrame.Selectable = true
-MainFrame.Draggable = true
+MainFrame.Visible = false
 
 autoattack.Name = "auto attack"
 autoattack.Parent = MainFrame
@@ -57,55 +56,9 @@ autoattack.Font = Enum.Font.SourceSans
 autoattack.Text = "Auto Attack On"
 autoattack.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattack.TextSize = 16.000
-autoattack.MouseButton1Down:connect(
-    function()
-    _G.on = 1
-    while _G.on == 1 do
-    local args = {
-        [1] = {
-            [1] = "+FS6"
-        }
-    }
-    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-    
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(-64, 40.059631, 69.671082)
-        }
-    }
-
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Left"
-        }
-    }
-
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Right"
-        }
-    }
-    wait()
-    Remote:FireServer(unpack(Arguments))
-end
-    end
-)
+autoattack.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Auto%20Attack", true))()
+end)
 
 autorespawn.Name = "auto respawn "
 autorespawn.Parent = MainFrame
@@ -116,25 +69,23 @@ autorespawn.Font = Enum.Font.SourceSans
 autorespawn.Text = "Auto Respawn On"
 autorespawn.TextColor3 = Color3.fromRGB(125, 64, 186)
 autorespawn.TextSize = 16.000
-autorespawn.MouseButton1Down:connect(
-    function()
-        _G.Toggle = true
-        while _G.Toggle do
-            local args = {
-                [1] = {
-                    [1] = "Respawn"
-                }
-            }
-            wait(0.2)
-            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-            for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                if v.Name == "ForceField" then
-                    v:Destroy()
-                end
-            end
-        end
-    end
-)
+autorespawn.MouseButton1Down:connect(function()
+	_G.Toggle = true
+	while _G.Toggle do
+		local args = {
+			[1] = {
+				[1] = "Respawn"
+			}
+		}
+		wait(0.2)
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v.Name == "ForceField" then
+				v:Destroy()
+			end
+		end
+	end
+end)
 
 psychictoggle.Name = "psychic toggle"
 psychictoggle.Parent = MainFrame
@@ -145,62 +96,9 @@ psychictoggle.Font = Enum.Font.SourceSans
 psychictoggle.Text = "Psychic Script Toggle"
 psychictoggle.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychictoggle.TextSize = 16.000
-psychictoggle.MouseButton1Down:connect(
-    function()
-       function reload()
-
-
-end
-
-
-local Target = ""
-local test = false
-
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
-
-local X = Material.Load({
-    Title = "Psychic_Script:\n(made by Corey)",
-    Style = 25.4,
-    SizeX = 280,
-    SizeY = 140,
-    Theme = "Light"
-})
-
-local Main = X.New({
-    Title = "Main"
-})
-
-local playerr = Main.TextField({
-    Text = "Player",
-    Callback = function(Value)
-         Target = Value
-        print(Target)
-    end
-})
-
-local B = Main.Toggle({
-    Text = "Pyschic spam",
-    Callback = function(Value)
-        test = Value
-    end,
-    Enabled = false
-})
-
-
-while wait() do
-
-    if test then
-    
-        for i,v in pairs(game.Players:GetPlayers()) do
-        game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[Target]})
-        game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
-        end
-        print("test")
-        wait()
-    end
-end
-    end
-)
+psychictoggle.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Psychic%20script%20toggle", true))()
+end)
 
 psychicall.Name = "psychic all"
 psychicall.Parent = MainFrame
@@ -211,16 +109,9 @@ psychicall.Font = Enum.Font.SourceSans
 psychicall.Text = "Psychic All On"
 psychicall.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychicall.TextSize = 16.000
-psychicall.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20on",
-                true
-            )
-        )()
-    end
-)
+psychicall.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20on", true))()
+end)
 
 autoattackoff.Name = "auto attack off"
 autoattackoff.Parent = MainFrame
@@ -231,55 +122,9 @@ autoattackoff.Font = Enum.Font.SourceSans
 autoattackoff.Text = "Auto Attack Off"
 autoattackoff.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattackoff.TextSize = 16.000
-autoattackoff.MouseButton1Down:connect(
-    function()
-    _G.on = 0
-while _G.on == 1 do
-    local args = {
-        [1] = {
-            [1] = "+FS6"
-        }
-    }
-    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-    
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(-808.782837, 250.059631, 749.671082)
-        }
-    }
-
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Left"
-        }
-    }
-
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Right"
-        }
-    }
-    wait()
-    Remote:FireServer(unpack(Arguments))
-end
-    end
-)
+autoattackoff.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/auto%20spam%20off", true))()
+end)
 
 autorespawnoff.Name = "auto respawn off"
 autorespawnoff.Parent = MainFrame
@@ -290,25 +135,23 @@ autorespawnoff.Font = Enum.Font.SourceSans
 autorespawnoff.Text = "Auto Respawn Off"
 autorespawnoff.TextColor3 = Color3.fromRGB(125, 64, 186)
 autorespawnoff.TextSize = 16.000
-autorespawnoff.MouseButton1Down:connect(
-    function()
-        _G.Toggle = false
-        while _G.Toggle do
-            local args = {
-                [1] = {
-                    [1] = "Respawn"
-                }
-            }
-            wait(0.2)
-            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-            for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                if v.Name == "ForceField" then
-                    v:Destroy()
-                end
-            end
-        end
-    end
-)
+autorespawnoff.MouseButton1Down:connect(function()
+	_G.Toggle = false
+	while _G.Toggle do
+		local args = {
+			[1] = {
+				[1] = "Respawn"
+			}
+		}
+		wait(0.2)
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v.Name == "ForceField" then
+				v:Destroy()
+			end
+		end
+	end
+end)
 
 split.Name = "split"
 split.Parent = MainFrame
@@ -319,35 +162,9 @@ split.Font = Enum.Font.SourceSans
 split.Text = "Split"
 split.TextColor3 = Color3.fromRGB(125, 64, 186)
 split.TextSize = 16.000
-split.MouseButton1Down:connect(
-    function()
-        _G.on = 1
-    while _G.on == 1
- do
-local args = {
-    [1] = {
-        [1] = "+FS6"
-    }
-}
-wait(0)
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
-plr = game.Players.LocalPlayer
-hum = plr.Character.HumanoidRootPart
-
-hum.CFrame = CFrame.new(-273,281,1007)
-
-wait(.5)
-
-game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
-
-wait(.5)
-
-hum.CFrame = CFrame.new(-367,15735,-11)
-end
-end
-)
+split.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/OP%20Split",true))()
+end)
 
 psychicalloff.Name = "psychic all off"
 psychicalloff.Parent = MainFrame
@@ -358,16 +175,9 @@ psychicalloff.Font = Enum.Font.SourceSans
 psychicalloff.Text = "Psychic All Off"
 psychicalloff.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychicalloff.TextSize = 16.000
-psychicalloff.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20off",
-                true
-            )
-        )()
-    end
-)
+psychicalloff.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20off", true))()
+end)
 
 removesheild.Name = "remove sheild"
 removesheild.Parent = MainFrame
@@ -378,19 +188,17 @@ removesheild.Font = Enum.Font.SourceSans
 removesheild.Text = "Remove Shield"
 removesheild.TextColor3 = Color3.fromRGB(125, 64, 186)
 removesheild.TextSize = 16.000
-removesheild.MouseButton1Down:connect(
-    function()
-        _G.Toggle = true
-        while _G.Toggle do
-            wait()
-            for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                if v.Name == "ForceField" then
-                    v:Destroy()
-                end
-            end
-        end
-    end
-)
+removesheild.MouseButton1Down:connect(function()
+	_G.Toggle = true
+	while _G.Toggle do
+		wait()
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v.Name == "ForceField" then
+				v:Destroy()
+			end
+		end
+	end
+end)
 
 noreptake.Name = "no rep take"
 noreptake.Parent = MainFrame
@@ -401,11 +209,9 @@ noreptake.Font = Enum.Font.SourceSans
 noreptake.Text = "No Rep Taking"
 noreptake.TextColor3 = Color3.fromRGB(125, 64, 186)
 noreptake.TextSize = 16.000
-noreptake.MouseButton1Down:connect(
-    function()
-        game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt:Destroy()
-    end
-)
+noreptake.MouseButton1Down:connect(function()
+	game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt: Destroy()
+end)
 
 multicheck.Name = "multi check"
 multicheck.Parent = MainFrame
@@ -416,13 +222,9 @@ multicheck.Font = Enum.Font.SourceSans
 multicheck.Text = "Multies Checker"
 multicheck.TextColor3 = Color3.fromRGB(125, 64, 186)
 multicheck.TextSize = 16.000
-multicheck.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/multi%20checker", true)
-        )()
-    end
-)
+multicheck.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/multi%20checker",true))()
+end)
 
 spychat.Name = "spy chat"
 spychat.Parent = MainFrame
@@ -433,13 +235,9 @@ spychat.Font = Enum.Font.SourceSans
 spychat.Text = "Spy Chat"
 spychat.TextColor3 = Color3.fromRGB(125, 64, 186)
 spychat.TextSize = 16.000
-spychat.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/chatspy.txt", true)
-        )()
-    end
-)
+spychat.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/chatspy.txt",true))()
+end)
 
 godmode.Name = "god mode"
 godmode.Parent = MainFrame
@@ -450,16 +248,9 @@ godmode.Font = Enum.Font.SourceSans
 godmode.Text = "GOD MODE"
 godmode.TextColor3 = Color3.fromRGB(0, 85, 255)
 godmode.TextSize = 14.000
-godmode.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/god%20mode%20script.txt",
-                true
-            )
-        )()
-    end
-)
+godmode.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/god%20mode%20script.txt",true))()
+end)
 
 opvoid.Name = "op void"
 opvoid.Parent = MainFrame
@@ -470,13 +261,9 @@ opvoid.Font = Enum.Font.SourceSans
 opvoid.Text = "OP VOID"
 opvoid.TextColor3 = Color3.fromRGB(3, 81, 239)
 opvoid.TextSize = 14.000
-opvoid.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true)
-        )()
-    end
-)
+opvoid.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true))()
+end) 
 
 invisloop.Name = "invis loop"
 invisloop.Parent = MainFrame
@@ -487,22 +274,22 @@ invisloop.Font = Enum.Font.SourceSans
 invisloop.Text = "Invis Loop"
 invisloop.TextColor3 = Color3.fromRGB(3, 81, 239)
 invisloop.TextSize = 14.000
-invisloop.MouseButton1Down:connect(
-    function()
-        _G.on = 1
-        while _G.on == 1 do
-            local args = {
-                [1] = {
-                    [1] = "Skill_Invisible",
-                    [2] = "Start"
-                }
-            }
+invisloop.MouseButton1Down:connect(function()
+	_G.on = 1
+	while _G.on == 1
+	do
+		wait()
+		local args = {
+			[1] = {
+				[1] = "Skill_Invisible",
+				[2] = "Start"
+			}
+		}
 
-            game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-            game:GetService("Players").LocalPlayer.Character.Head.InvisibilityUseSound:Destroy()
-        end
-    end
-)
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+		game:GetService("Players").LocalPlayer.Character.Head.InvisibilityUseSound:Destroy()
+	end
+end)
 
 anothergui.Name = "another gui "
 anothergui.Parent = MainFrame
@@ -513,16 +300,9 @@ anothergui.Font = Enum.Font.SourceSans
 anothergui.Text = "	Another GUI"
 anothergui.TextColor3 = Color3.fromRGB(0, 85, 255)
 anothergui.TextSize = 14.000
-anothergui.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/another%20gui.txt",
-                true
-            )
-        )()
-    end
-)
+anothergui.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/another%20gui.txt", true))()
+end)
 
 antichatspy.Name = "anti chat spy"
 antichatspy.Parent = MainFrame
@@ -533,11 +313,9 @@ antichatspy.Font = Enum.Font.SourceSans
 antichatspy.Text = "AntiChat Logger"
 antichatspy.TextColor3 = Color3.fromRGB(3, 81, 239)
 antichatspy.TextSize = 14.000
-antichatspy.MouseButton1Down:connect(
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/nologs", true))()
-    end
-)
+antichatspy.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/nologs", true))()
+end)
 
 rankchanger.Name = "rank changer"
 rankchanger.Parent = MainFrame
@@ -548,27 +326,106 @@ rankchanger.Font = Enum.Font.SourceSans
 rankchanger.Text = "Rank Changer"
 rankchanger.TextColor3 = Color3.fromRGB(3, 81, 239)
 rankchanger.TextSize = 14.000
-rankchanger.MouseButton1Down:connect(
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/server%20rank%20changer.txt",
-                true
-            )
-        )()
-    end
-)
+rankchanger.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/server%20rank%20changer.txt", true))()
+end)
 
-TextLabel.Parent = MainFrame
+topBar.Name = "topBar"
+topBar.Parent = MainFrame
+topBar.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+topBar.BorderColor3 = Color3.fromRGB(53, 53, 53)
+topBar.Size = UDim2.new(0, 601, 0, 40)
+topBar.Font = Enum.Font.SourceSans
+topBar.Text = "Corey's Gui"
+topBar.TextColor3 = Color3.fromRGB(125, 64, 186)
+topBar.TextSize = 25.000
+topBar.TextStrokeColor3 = Color3.fromRGB(125, 64, 186)
+topBar.TextWrapped = true
+
+speccybutton.Name = "speccybutton"
+speccybutton.Parent = MainFrame
+speccybutton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+speccybutton.Position = UDim2.new(0.0254535675, 0, 0.822312474, 0)
+speccybutton.Size = UDim2.new(0, 571, 0, 49)
+speccybutton.Font = Enum.Font.SourceSans
+speccybutton.Text = "Corey's special thingy button "
+speccybutton.TextColor3 = Color3.fromRGB(0, 255, 255)
+speccybutton.TextSize = 14.000
+
+speccyFrame.Name = "speccyFrame"
+speccyFrame.Parent = MainFrame
+speccyFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+speccyFrame.BorderColor3 = Color3.fromRGB(53, 53, 53)
+speccyFrame.Position = UDim2.new(1.08097315, 0, 0.398302585, 0)
+speccyFrame.Size = UDim2.new(0, 384, 0, 145)
+speccyFrame.Visible = false
+
+TextLabel.Parent = speccyFrame
 TextLabel.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-TextLabel.BorderColor3 = Color3.fromRGB(53, 53, 53)
-TextLabel.Size = UDim2.new(0, 601, 0, 40)
+TextLabel.Position = UDim2.new(0.00520833349, 0, 0.00386510417, 0)
+TextLabel.Size = UDim2.new(0, 384, 0, 50)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Corey's Gui"
-TextLabel.TextColor3 = Color3.fromRGB(125, 64, 186)
-TextLabel.TextSize = 25.000
-TextLabel.TextStrokeColor3 = Color3.fromRGB(125, 64, 186)
-TextLabel.TextWrapped = true
+TextLabel.Text = "Corey's universal scripts"
+TextLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+TextLabel.TextSize = 14.000
+
+cmdx.Name = "cmd-x"
+cmdx.Parent = speccyFrame
+cmdx.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+cmdx.BorderColor3 = Color3.fromRGB(53, 53, 53)
+cmdx.Position = UDim2.new(0, 0, 0.341234803, 0)
+cmdx.Size = UDim2.new(0, 195, 0, 50)
+cmdx.Font = Enum.Font.SourceSans
+cmdx.Text = "Cmd-x"
+cmdx.TextColor3 = Color3.fromRGB(0, 255, 255)
+cmdx.TextSize = 14.000
+cmdx.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+infyield.Name = "inf-yield"
+infyield.Parent = speccyFrame
+infyield.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+infyield.BorderColor3 = Color3.fromRGB(53, 53, 53)
+infyield.Position = UDim2.new(0.509590924, 0, 0.342056781, 0)
+infyield.Size = UDim2.new(0, 191, 0, 50)
+infyield.Font = Enum.Font.SourceSans
+infyield.Text = "infinite yield"
+infyield.TextColor3 = Color3.fromRGB(0, 255, 255)
+infyield.TextSize = 14.000
+infyield.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+DanceScripts.Name = "Dance-Scripts"
+DanceScripts.Parent = speccyFrame
+DanceScripts.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+DanceScripts.BorderColor3 = Color3.fromRGB(53, 53, 53)
+DanceScripts.Position = UDim2.new(0, 0, 0.765458524, 0)
+DanceScripts.Size = UDim2.new(0, 386, 0, 35)
+DanceScripts.Font = Enum.Font.SourceSans
+DanceScripts.Text = "R15 Dance Scripts"
+DanceScripts.TextColor3 = Color3.fromRGB(0, 255, 255)
+DanceScripts.TextSize = 14.000
+DanceScripts.TextWrapped = true
+DanceScripts.MouseButton1Down:connect(function()
+	_G.ToggleColor = Color3.fromRGB(255,192,203)
+	_G.ButtonColor = Color3.fromRGB(255,192,203)
+	_G.SliderColor = Color3.fromRGB(255,192,203)
+	loadstring(game:HttpGet("https://pastebin.com/raw/gE31aTaW", true))()
+end)
+
+Close.Name = "Close"
+Close.Parent = speccyFrame
+Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Close.Position = UDim2.new(0.948035598, 0, 0.00537443161, 0)
+Close.Size = UDim2.new(0, 21, 0, 17)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(254, 5, 9)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
 
 togglegui.Name = "toggle gui "
 togglegui.Parent = ScreenGui
@@ -582,130 +439,42 @@ togglegui.TextScaled = true
 togglegui.TextSize = 14.000
 togglegui.TextWrapped = true
 
-speccyFrame.Name = "speccyFrame"
-speccyFrame.Parent = ScreenGui
-speccyFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
-speccyFrame.BorderColor3 = Color3.fromRGB(53, 53, 53)
-speccyFrame.Position = UDim2.new(0.478643656, 0, 0.595346928, 0)
-speccyFrame.Size = UDim2.new(0, 384, 0, 145)
-
-TextLabel_2.Parent = speccyFrame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-TextLabel_2.Position = UDim2.new(0.00520833349, 0, -0.0168245509, 0)
-TextLabel_2.Size = UDim2.new(0, 384, 0, 50)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Corey's universal scripts"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 255, 255)
-TextLabel_2.TextSize = 14.000
-
-cmdx.Name = "cmd-x"
-cmdx.Parent = speccyFrame
-cmdx.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-cmdx.BorderColor3 = Color3.fromRGB(53, 53, 53)
-cmdx.Position = UDim2.new(0, 0, 0.341234803, 0)
-cmdx.Size = UDim2.new(0, 195, 0, 50)
-cmdx.Font = Enum.Font.SourceSans
-cmdx.Text = "Cmd-x"
-cmdx.TextColor3 = Color3.fromRGB(0, 255, 255)
-cmdx.TextSize = 14.000
-cmdx.MouseButton1Down:connect(
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
-    end
-)
-
-infyield.Name = "inf-yield"
-infyield.Parent = speccyFrame
-infyield.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-infyield.BorderColor3 = Color3.fromRGB(53, 53, 53)
-infyield.Position = UDim2.new(0.509590924, 0, 0.342056781, 0)
-infyield.Size = UDim2.new(0, 191, 0, 50)
-infyield.Font = Enum.Font.SourceSans
-infyield.Text = "infinite yield"
-infyield.TextColor3 = Color3.fromRGB(0, 255, 255)
-infyield.TextSize = 14.000
-infyield.MouseButton1Down:connect(
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-    end
-)
-
-DanceScripts.Name = "Dance-Scripts"
-DanceScripts.Parent = speccyFrame
-DanceScripts.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-DanceScripts.BorderColor3 = Color3.fromRGB(53, 53, 53)
-DanceScripts.Position = UDim2.new(0, 0, 0.668906629, 0)
-DanceScripts.Size = UDim2.new(0, 386, 0, 49)
-DanceScripts.Font = Enum.Font.SourceSans
-DanceScripts.Text = "R15 Dance Scripts"
-DanceScripts.TextColor3 = Color3.fromRGB(0, 255, 255)
-DanceScripts.TextSize = 14.000
-DanceScripts.TextWrapped = true
-DanceScripts.MouseButton1Down:connect(
-    function()
-        _G.ToggleColor = Color3.fromRGB(255, 192, 203)
-        _G.ButtonColor = Color3.fromRGB(255, 192, 203)
-        _G.SliderColor = Color3.fromRGB(255, 192, 203)
-        loadstring(game:HttpGet("https://pastebin.com/raw/gE31aTaW", true))()
-    end
-)
-
-speccybutton.Name = "speccybutton"
-speccybutton.Parent = ScreenGui
-speccybutton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-speccybutton.Position = UDim2.new(0.114892416, 0, 0.638511837, 0)
-speccybutton.Size = UDim2.new(0, 571, 0, 50)
-speccybutton.Font = Enum.Font.SourceSans
-speccybutton.Text = "Corey's special thingy button "
-speccybutton.TextColor3 = Color3.fromRGB(0, 255, 255)
-speccybutton.TextSize = 14.000
-
-Close.Name = "Close"
-Close.Parent = ScreenGui
-Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Close.Position = UDim2.new(0.72724396, 0, 0.591581345, 0)
-Close.Size = UDim2.new(0, 43, 0, 50)
-Close.Font = Enum.Font.SourceSans
-Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(254, 5, 9)
-Close.TextScaled = true
-Close.TextSize = 14.000
-Close.TextWrapped = true
-
 -- Scripts:
 
-local function RZKUZVM_fake_script() -- togglegui.LocalScript
-    local script = Instance.new("LocalScript", togglegui)
+local function QBQM_fake_script() -- speccybutton.speccy button 
+	local script = Instance.new('LocalScript', speccybutton)
 
-    script.Parent.MouseButton1Click:Connect(
-        function()
-            script.Parent.Parent.MainFrame.Visible = not script.Parent.Parent.MainFrame.Visible
-            script.Parent.Parent.speccybutton.Visible = not script.Parent.Parent.speccybutton.Visible
-        end
-    )
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.speccyFrame.Visible = not script.Parent.Parent.speccyFrame.Visible
+	end)
+	
 end
-coroutine.wrap(RZKUZVM_fake_script)()
-local function XBZUG_fake_script() -- speccybutton.LocalScript
-    local script = Instance.new("LocalScript", speccybutton)
+coroutine.wrap(QBQM_fake_script)()
+local function NQVJ_fake_script() -- Close.close/speccyframe 
+	local script = Instance.new('LocalScript', Close)
 
-    script.Parent.MouseButton1Click:Connect(
-        function()
-            script.Parent.Parent.MainFrame.Visible = not script.Parent.Parent.MainFrame.Visible
-            script.Parent.Parent.speccybutton.Visible = not script.Parent.Parent.speccybutton.Visible
-            script.Parent.Parent.speccyFrame.Visible = not script.Parent.Parent.speccyFrame.Visible
-            script.Parent.Parent.Close.Visible = not script.Parent.Parent.Close.Visible
-        end
-    )
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Visible = not script.Parent.Parent.Visible
+	end)
+	
 end
-coroutine.wrap(XBZUG_fake_script)()
-local function KRLFBU_fake_script() -- Close.LocalScript
-    local script = Instance.new("LocalScript", Close)
+coroutine.wrap(NQVJ_fake_script)()
+local function XRPTLDZ_fake_script() -- MainFrame.draggablescript 
+	local script = Instance.new('LocalScript', MainFrame)
 
-    script.Parent.MouseButton1Click:Connect(
-        function()
-            script.Parent.Parent.speccyFrame.Visible = not script.Parent.Parent.speccyFrame.Visible
-            script.Parent.Parent.Close.Visible = not script.Parent.Parent.Close.Visible
-        end
-    )
+	script.Parent.Selectable = true
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+	
 end
-coroutine.wrap(KRLFBU_fake_script)()
+coroutine.wrap(XRPTLDZ_fake_script)()
+local function GFUKJCA_fake_script() -- togglegui.LocalScript 
+	local script = Instance.new('LocalScript', togglegui)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.MainFrame.Visible = not script.Parent.Parent.MainFrame.Visible
+		script.Parent.Parent.speccybutton.Visible = not script.Parent.Parent.speccybutton.Visible
+	end)
+	
+end
+coroutine.wrap(GFUKJCA_fake_script)()
