@@ -1,5 +1,4 @@
-function()
-       function reload()
+function reload()
 
 
 end
@@ -42,7 +41,7 @@ local B = Main.Toggle({
 while wait() do
 
     if test then
-
+    
         for i,v in pairs(game.Players:GetPlayers()) do
         game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[Target]})
         game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
