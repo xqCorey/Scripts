@@ -123,7 +123,7 @@ autoattackoff.Text = "Auto Attack Off"
 autoattackoff.TextColor3 = Color3.fromRGB(125, 64, 186)
 autoattackoff.TextSize = 16.000
 autoattackoff.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/auto%20spam%20off", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Auto%20Attack%20off", true))()
 end)
 
 autorespawnoff.Name = "auto respawn off"
