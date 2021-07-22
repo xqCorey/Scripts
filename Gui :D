@@ -262,7 +262,7 @@ opvoid.Text = "OP VOID"
 opvoid.TextColor3 = Color3.fromRGB(3, 81, 239)
 opvoid.TextSize = 14.000
 opvoid.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/void.lua", true))()
 end) 
 
 invisloop.Name = "invis loop"
@@ -301,7 +301,7 @@ anothergui.Text = "	Another GUI"
 anothergui.TextColor3 = Color3.fromRGB(0, 85, 255)
 anothergui.TextSize = 14.000
 anothergui.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/another%20gui.txt", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/thing%20gui%20not%20mine", true))()
 end)
 
 antichatspy.Name = "anti chat spy"
