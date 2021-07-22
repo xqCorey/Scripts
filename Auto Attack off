@@ -1,0 +1,128 @@
+if game.PlaceId ~= 2202352383 then 
+return
+end
+local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.F2 then
+_G.on = 1
+    while _G.on == 1
+ do
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_SpherePunch",
+           [2] = Vector3.new(-808.782837,250.059631,749.671082)
+       }
+}
+
+Remote:FireServer(unpack(Arguments))
+wait()
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_Punch",
+           [2] = "Left",
+           
+       }
+}
+
+Remote:FireServer(unpack(Arguments))
+wait()
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_Punch",
+           [2] = "Right",
+           
+       }
+}
+wait()
+Remote:FireServer(unpack(Arguments))end
+end
+end)
+
+
+
+local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.F3 then
+_G.on = 0
+    while _G.on == 1
+ do
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_SpherePunch",
+           [2] = Vector3.new(-808.782837,250.059631,749.671082)
+       }
+}
+
+Remote:FireServer(unpack(Arguments))
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_Punch",
+           [2] = "Left",
+           [3] = Vector3.new(-707.280029,246.219849,751.109802)
+       }
+}
+
+Remote:FireServer(unpack(Arguments))
+wait()
+local Remote = game.ReplicatedStorage['RemoteEvent']
+
+local Arguments = {
+       [1] = {
+           [1] = "Skill_Punch",
+           [2] = "Right",
+           [3] = Vector3.new(-707.280029,246.219849,751.109802)
+       }
+}
+wait()
+Remote:FireServer(unpack(Arguments))
+end
+end
+end)
+
+local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.F2 then
+_G.on = 1
+    while _G.on == 1
+ do
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
+wait()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end
+end)
+
+local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.F3 then
+_G.on = 0
+    while _G.on == 1
+ do
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 15735.1797, -9)
+local args = {
+    [1] = {
+        [1] = "+FS6"
+    }
+}
+wait()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+end
+end)
