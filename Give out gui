@@ -1,8 +1,46 @@
-wait(5)
-game.Lighting.Blur.Enabled = false
-game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
-game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
-wait(4)
-game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-wait(4)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Gui%20%3AD", true))() 
+
+--Make sure to obfuscate the gui of ur gonna give it out so that people cant snag your code 
+
+userlink = "https://raw.githubusercontent.com/xqCorey/Whitelist-and-Blacklist/main/Whitelist"
+
+banlink = "https://raw.githubusercontent.com/xqCorey/Whitelist-and-Blacklist/main/Blacklist"
+
+usernames = game:HttpGet(userlink, true)
+
+banlist = game:HttpGet(banlink, true)
+
+current = game.Players.LocalPlayer.Name
+
+
+
+if string.find(usernames,current) then
+print("user whitelisted enjoy")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Gui%20%3AD", true))()
+--script here ^^^ ive put ur script in there already btw
+
+local msg = "Username logged ``" .. game.Players.LocalPlayer.Name .. "`` executed user is whitelisted"
+
+local url = "https://ptb.discord.com/api/webhooks/865249588670758984/oKoPzegmF12-Pfzs-y5M0MLFXV6DKXYltgZZuDniS5TDy9vG3KSHMOEL1Eh8vUG5fhY8"
+
+syn.request({Url = url, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg})})
+elseif
+string.find(banlist,current) then 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/kick%20gui",true))()
+wait(10)
+game.Players.LocalPlayer:Kick("banned \n You are BlackListed get the fuck out")
+
+local msg2 = "Username logged ``" .. game.Players.LocalPlayer.Name .. "`` not executed user is blacklisted"
+local url2 = "https://ptb.discord.com/api/webhooks/865249230896496641/ifHuLVZt3Ev6MmIdUS0vyeJDloUMCtOCB5YYYk9DWFZUvV91YKRePfikYvxXDmaHoAPs"
+
+syn.request({Url = url2, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg2})})
+else
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Gui%20%3AD",true))()
+wait(10)
+
+game.Players.LocalPlayer:Kick("You arent whitelisted meaning you got this gui without permission")
+local msg3 = "Username logged ``" .. game.Players.LocalPlayer.Name .. "`` user has unauthorised access"
+local url3 = "https://ptb.discord.com/api/webhooks/865252250988314695/6nA5tjR9i7NGCM6SeK7mzKJwNtyDMtyW9i71Dys7s-2wKK45sCH_eZ3cm0sHjBNlZC3M"
+
+syn.request({Url = url3, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg3})})
+end
