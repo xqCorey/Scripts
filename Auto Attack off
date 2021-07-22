@@ -1,4 +1,4 @@
-_G.on = 0
+_G.on = 1
     while _G.on == 0
  do
 local Remote = game.ReplicatedStorage['RemoteEvent']
