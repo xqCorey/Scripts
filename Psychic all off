@@ -1,0 +1,12 @@
+_G.on = 0
+    while _G.on == 1
+ do
+for i,v in pairs(game.Players:GetPlayers()) do
+    pcall(function()
+game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[v.Name]})
+game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
+end)
+
+wait()
+end
+end
