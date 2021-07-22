@@ -110,7 +110,7 @@ psychicall.Text = "Psychic All On"
 psychicall.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychicall.TextSize = 16.000
 psychicall.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20on", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Psychic%20all%20on", true))()
 end)
 
 autoattackoff.Name = "auto attack off"
@@ -176,7 +176,7 @@ psychicalloff.Text = "Psychic All Off"
 psychicalloff.TextColor3 = Color3.fromRGB(125, 64, 186)
 psychicalloff.TextSize = 16.000
 psychicalloff.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/psychic%20all%20off", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Psychic%20all%20off", true))()
 end)
 
 removesheild.Name = "remove sheild"
@@ -327,7 +327,7 @@ rankchanger.Text = "Rank Changer"
 rankchanger.TextColor3 = Color3.fromRGB(3, 81, 239)
 rankchanger.TextSize = 14.000
 rankchanger.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/server%20rank%20changer.txt", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Rank%20Changer", true))()
 end)
 
 topBar.Name = "topBar"
