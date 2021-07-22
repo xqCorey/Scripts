@@ -314,7 +314,7 @@ antichatspy.Text = "AntiChat Logger"
 antichatspy.TextColor3 = Color3.fromRGB(3, 81, 239)
 antichatspy.TextSize = 14.000
 antichatspy.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/nologs", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Anti%20chat%20logger", true))()
 end)
 
 rankchanger.Name = "rank changer"
