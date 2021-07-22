@@ -223,7 +223,7 @@ multicheck.Text = "Multies Checker"
 multicheck.TextColor3 = Color3.fromRGB(125, 64, 186)
 multicheck.TextSize = 16.000
 multicheck.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/multi%20checker",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Multi_checker_SPTS.lua",true))()
 end)
 
 spychat.Name = "spy chat"
@@ -236,7 +236,7 @@ spychat.Text = "Spy Chat"
 spychat.TextColor3 = Color3.fromRGB(125, 64, 186)
 spychat.TextSize = 16.000
 spychat.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/chatspy.txt",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/Chat%20Spy.txt",true))()
 end)
 
 godmode.Name = "god mode"
