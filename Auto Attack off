@@ -1,7 +1,4 @@
-local Imput = game:GetService("UserInputService")
-    Imput.InputBegan:connect(function(inst)
-    if inst.KeyCode == Enum.KeyCode.F2 then
-_G.on = 1
+_G.on = 0
     while _G.on == 1
  do
 local Remote = game.ReplicatedStorage['RemoteEvent']
