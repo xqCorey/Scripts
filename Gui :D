@@ -262,7 +262,9 @@ opvoid.Text = "OP VOID"
 opvoid.TextColor3 = Color3.fromRGB(3, 81, 239)
 opvoid.TextSize = 14.000
 opvoid.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void", true))()
+	
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/void.lua", true))()
+--https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/spam%20void--
 end) 
 
 invisloop.Name = "invis loop"
