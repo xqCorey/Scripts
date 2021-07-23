@@ -4,7 +4,7 @@ _G.toggle = false
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
 local X = Material.Load({
-    Title = "Void:\n(made by Corey ;)",
+    Title = "Void:\n(made by Player and Corey ;)",
     Style = 128,
     SizeX = 280,
     SizeY = 140,
