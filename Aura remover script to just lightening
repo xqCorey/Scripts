@@ -1,0 +1,10 @@
+game.Players.LocalPlayer.character.LeftHand.Aura1: Destroy()
+game.Players.LocalPlayer.character.RightHand.Aura1: Destroy()
+game.Players.LocalPlayer.character.LeftUpperLeg.Aura1: Destroy()
+game.Players.LocalPlayer.character.RightUpperLeg.Aura1: Destroy()
+game.Players.LocalPlayer.character.UpperTorso.Aura1: Destroy()
+game.Players.LocalPlayer.character.LeftHand.Aura2: Destroy()
+game.Players.LocalPlayer.character.RightHand.Aura2: Destroy()
+game.Players.LocalPlayer.character.LeftHand.Aura2: Destroy()
+game.Players.LocalPlayer.character.RightHand.Aura2: Destroy()
+    end
