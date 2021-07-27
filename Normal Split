@@ -1,0 +1,12 @@
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+
+hum.CFrame = CFrame.new(-273,281,1007)
+
+wait(.5)
+
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+
+wait(.5)
+
+hum.CFrame = CFrame.new(-367,15735,-11)
