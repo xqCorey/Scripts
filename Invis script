@@ -1,0 +1,14 @@
+_G.on = 1
+	while _G.on == 1
+	do
+		wait()
+		local args = {
+			[1] = {
+				[1] = "Skill_Invisible",
+				[2] = "Start"
+			}
+		}
+
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+		game:GetService("Players").LocalPlayer.Character.Head.InvisibilityUseSound:Destroy()
+	end
