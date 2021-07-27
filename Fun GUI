@@ -1,0 +1,356 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+ScreenGui0 = Instance.new("ScreenGui")
+TextButton1 = Instance.new("TextButton")
+Script2 = Instance.new("Script")
+Frame3 = Instance.new("Frame")
+TextLabel4 = Instance.new("TextLabel")
+Script5 = Instance.new("Script")
+StringValue6 = Instance.new("StringValue")
+TextBox7 = Instance.new("TextBox")
+TextButton8 = Instance.new("TextButton")
+Script9 = Instance.new("Script")
+TextLabel10 = Instance.new("TextLabel")
+TextBox11 = Instance.new("TextBox")
+TextButton12 = Instance.new("TextButton")
+Script13 = Instance.new("Script")
+ScreenGui0.Name = "Vocal"
+ScreenGui0.Parent = mas
+TextButton1.Name = "Open"
+TextButton1.Parent = ScreenGui0
+TextButton1.Size = UDim2.new(0, 114, 0, 34)
+TextButton1.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton1.Text = "Fun Gui"
+TextButton1.Position = UDim2.new(0, 0, 0, 512)
+TextButton1.BackgroundColor3 = Color3.new(0, 0, 0)
+TextButton1.Font = Enum.Font.SourceSans
+TextButton1.FontSize = Enum.FontSize.Size32
+TextButton1.TextColor3 = Color3.new(1, 1, 1)
+Script2.Parent = TextButton1
+table.insert(cors,sandbox(Script2,function()
+local consumed = false
+function opc ()
+	print("function started")
+	if script.Parent.Parent.VocalFrame.Visible == true and consumed == false then
+		print("gui opened... closing gui")
+		script.Parent.Parent.VocalFrame.Visible = false
+		print("gui closed")
+		consumed = true
+	end
+	if script.Parent.Parent.VocalFrame.Visible == false and consumed ==  false then
+		print("gui closed... opening gui")
+		script.Parent.Parent.VocalFrame.Visible = true
+		print("gui opened")
+	end
+	consumed =  false
+end
+
+script.Parent.MouseButton1Click:connect(opc)
+end))
+Frame3.Name = "VocalFrame"
+Frame3.Parent = ScreenGui0
+Frame3.Size = UDim2.new(0, 350, 0, 500)
+Frame3.Style = Enum.FrameStyle.DropShadow
+Frame3.Position = UDim2.new(0, 473, 0, 17)
+Frame3.Visible = false
+Frame3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel4.Name = "Usr"
+TextLabel4.Parent = Frame3
+TextLabel4.Transparency = 1
+TextLabel4.Size = UDim2.new(0, 335, 0, 50)
+TextLabel4.Text = "-"
+TextLabel4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel4.BackgroundTransparency = 1
+TextLabel4.Font = Enum.Font.SourceSans
+TextLabel4.FontSize = Enum.FontSize.Size32
+TextLabel4.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+Script5.Name = "Userfind"
+Script5.Parent = TextLabel4
+table.insert(cors,sandbox(Script5,function()
+while true do
+	wait(1)
+	script.Parent.Text = ("Username : "..script.Parent.Parent.Parent.Parent.Parent.Name)
+	script.Parent.UsrName.Value = script.Parent.Parent.Parent.Parent.Parent.Name
+end
+end))
+StringValue6.Name = "UsrName"
+StringValue6.Parent = TextLabel4
+TextBox7.Name = "Playername"
+TextBox7.Parent = Frame3
+TextBox7.Transparency = 1
+TextBox7.Size = UDim2.new(0, 200, 0, 50)
+TextBox7.Text = "Girl Name"
+TextBox7.Position = UDim2.new(0, 0, 0, 200)
+TextBox7.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox7.BackgroundTransparency = 1
+TextBox7.Font = Enum.Font.SourceSans
+TextBox7.FontSize = Enum.FontSize.Size32
+TextBox7.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+TextButton8.Name = "Player6"
+TextButton8.Parent = TextBox7
+TextButton8.Size = UDim2.new(0, 100, 0, 50)
+TextButton8.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton8.Text = "Anal"
+TextButton8.Position = UDim2.new(0, 200, 0, 0)
+TextButton8.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton8.Font = Enum.Font.SourceSans
+TextButton8.FontSize = Enum.FontSize.Size32
+TextButton8.TextColor3 = Color3.new(1, 1, 1)
+Script9.Name = "Plr6script"
+Script9.Parent = TextButton8
+table.insert(cors,sandbox(Script9,function()
+function plr ()
+function fWeld(zName, zParent, zPart0, zPart1, zCoco, a, b, c, d, e, f)
+local funcw = Instance.new("Weld")
+funcw.Name = zName
+funcw.Parent = zParent
+funcw.Part0 = zPart0
+funcw.Part1 = zPart1
+if (zCoco == true) then
+funcw.C0 = CFrame.new(a, b, c) * CFrame.fromEulerAnglesXYZ(d, e, f)
+else
+funcw.C1 = CFrame.new(a, b, c) * CFrame.fromEulerAnglesXYZ(d, e, f)
+end
+return funcw
+end
+function fun(n1, n2)
+pcall(function()
+t1 = game.Players[script.Parent.Parent.Parent.Usr.UsrName.Value].Character.Torso
+t2 = game.Players[script.Parent.Parent.Text].Character.Torso
+t2.Parent.Humanoid.PlatformStand = true
+t1["Left Shoulder"]:Remove()
+ls1 = Instance.new("Weld")
+ls1.Parent = t1
+ls1.Part0 = t1
+ls1.Part1 = t1.Parent["Left Arm"]
+ls1.C0 = CFrame.new(-1.5,0,0)
+ls1.Name = "Left Shoulder"
+t1["Right Shoulder"]:Remove()
+rs1 = Instance.new("Weld")
+rs1.Parent = t1
+rs1.Part0 = t1
+rs1.Part1 = t1.Parent["Right Arm"]
+rs1.C0 = CFrame.new(1.5,0,0)
+rs1.Name = "Right Shoulder"
+t2["Left Shoulder"]:Remove()
+ls2 = Instance.new("Weld")
+ls2.Parent = t2
+ls2.Part0 = t2
+ls2.Part1 = t2.Parent["Left Arm"]
+ls2.C0 = CFrame.new(-1.5,0,0)
+ls2.Name = "Left Shoulder"
+t2["Right Shoulder"]:Remove()
+rs2 = Instance.new("Weld")
+rs2.Parent = t2
+rs2.Part0 = t2
+rs2.Part1 = t2.Parent["Right Arm"]
+rs2.C0 = CFrame.new(1.5,0,0)
+rs2.Name = "Right Shoulder"
+t2["Left Hip"]:Remove()
+lh2 = Instance.new("Weld")
+lh2.Parent = t2
+lh2.Part0 = t2
+lh2.Part1 = t2.Parent["Left Leg"]
+lh2.C0 = CFrame.new(-0.5,-2,0)
+lh2.Name = "Left Hip"
+t2["Right Hip"]:Remove()
+rh2 = Instance.new("Weld")
+rh2.Parent = t2
+rh2.Part0 = t2
+rh2.Part1 = t2.Parent["Right Leg"]
+rh2.C0 = CFrame.new(0.5,-2,0)
+rh2.Name = "Right Hip"
+fWeld("weld",t2,t2,brn,true,0.5,0.5,-1.2,0,0,0)
+lh2.C1 = CFrame.new(0,-1.5,-0.5) * CFrame.Angles(0.9,-0.4,0)
+rh2.C1 = CFrame.new(0,-1.5,-0.5) * CFrame.Angles(0.9,0.4,0)
+ls2.C1 = CFrame.new(-0.5,-1.3,-0.5) * CFrame.Angles(0.9,-0.4,0)
+rs2.C1 = CFrame.new(0.5,-1.3,-0.5) * CFrame.Angles(0.9,0.4,0)
+ls1.C1 = CFrame.new(-0.5,0.7,0) * CFrame.Angles(-0.9,-0.4,0)
+rs1.C1 = CFrame.new(0.5,0.7,0) * CFrame.Angles(-0.9,0.4,0)
+if t1:findFirstChild("weldx") ~= nil then
+t1.weldx:Remove()
+end
+we = fWeld("weldx", t1, t1, t2, true, 0, -0.9, -1.3, math.rad(-90), 0, 0)
+n = t2.Neck
+end)
+coroutine.resume(coroutine.create(function()
+while wait() do
+for i = 1,6 do
+we.C1 = we.C1 * CFrame.new(0,-0.3,0)
+wait()
+end
+
+for i = 1,6 do
+we.C1 = we.C1 * CFrame.new(0,0.3,0)
+wait()
+end
+end
+end))
+end
+fun("coolboy0st", "littletspetshop123")
+end
+
+script.Parent.MouseButton1Click:connect(plr)
+end))
+TextLabel10.Name = "credits"
+TextLabel10.Parent = Frame3
+TextLabel10.Transparency = 1
+TextLabel10.Size = UDim2.new(0, 335, 0, 50)
+TextLabel10.Text = "Works with morphs only"
+TextLabel10.Position = UDim2.new(0, 0, 0, 400)
+TextLabel10.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel10.BackgroundTransparency = 1
+TextLabel10.Font = Enum.Font.SourceSans
+TextLabel10.FontSize = Enum.FontSize.Size32
+TextLabel10.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+TextBox11.Name = "Playername"
+TextBox11.Parent = Frame3
+TextBox11.Transparency = 1
+TextBox11.Size = UDim2.new(0, 200, 0, 50)
+TextBox11.Text = "Girl Name"
+TextBox11.Position = UDim2.new(0, 0, 0, 250)
+TextBox11.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox11.BackgroundTransparency = 1
+TextBox11.Font = Enum.Font.SourceSans
+TextBox11.FontSize = Enum.FontSize.Size32
+TextBox11.TextColor3 = Color3.new(0.509804, 0.796079, 1)
+TextButton12.Name = "Player7"
+TextButton12.Parent = TextBox11
+TextButton12.Size = UDim2.new(0, 100, 0, 50)
+TextButton12.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton12.Text = "Blowjob"
+TextButton12.Position = UDim2.new(0, 200, 0, 0)
+TextButton12.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton12.Font = Enum.Font.SourceSans
+TextButton12.FontSize = Enum.FontSize.Size32
+TextButton12.TextColor3 = Color3.new(1, 1, 1)
+Script13.Name = "Plr7script"
+Script13.Parent = TextButton12
+table.insert(cors,sandbox(Script13,function()
+function plr ()
+function fWeld(zName, zParent, zPart0, zPart1, zCoco, a, b, c, d, e, f)
+local funcw = Instance.new("Weld")
+funcw.Name = zName
+funcw.Parent = zParent
+funcw.Part0 = zPart0
+funcw.Part1 = zPart1
+if (zCoco == true) then
+funcw.C0 = CFrame.new(a, b, c) * CFrame.fromEulerAnglesXYZ(d, e, f)
+else
+funcw.C1 = CFrame.new(a, b, c) * CFrame.fromEulerAnglesXYZ(d, e, f)
+end
+return funcw
+end
+function fun(n1, n2)
+pcall(function()
+t1 = game.Players[script.Parent.Parent.Parent.Usr.UsrName.Value].Character.Torso
+t2 = game.Players[script.Parent.Parent.Text].Character.Torso
+t2.Parent.Humanoid.PlatformStand = true
+t1["Left Shoulder"]:Remove()
+ls1 = Instance.new("Weld")
+ls1.Parent = t1
+ls1.Part0 = t1
+ls1.Part1 = t1.Parent["Left Arm"]
+ls1.C0 = CFrame.new(-1.5,0,0)
+ls1.Name = "Left Shoulder"
+t1["Right Shoulder"]:Remove()
+rs1 = Instance.new("Weld")
+rs1.Parent = t1
+rs1.Part0 = t1
+rs1.Part1 = t1.Parent["Right Arm"]
+rs1.C0 = CFrame.new(1.5,0,0)
+rs1.Name = "Right Shoulder"
+t2["Left Shoulder"]:Remove()
+ls2 = Instance.new("Weld")
+ls2.Parent = t2
+ls2.Part0 = t2
+ls2.Part1 = t2.Parent["Left Arm"]
+ls2.C0 = CFrame.new(-1.5,0,0)
+ls2.Name = "Left Shoulder"
+t2["Right Shoulder"]:Remove()
+rs2 = Instance.new("Weld")
+rs2.Parent = t2
+rs2.Part0 = t2
+rs2.Part1 = t2.Parent["Right Arm"]
+rs2.C0 = CFrame.new(1.5,0,0)
+rs2.Name = "Right Shoulder"
+t2["Left Hip"]:Remove()
+lh2 = Instance.new("Weld")
+lh2.Parent = t2
+lh2.Part0 = t2
+lh2.Part1 = t2.Parent["Left Leg"]
+lh2.C0 = CFrame.new(-0.5,-2,0)
+lh2.Name = "Left Hip"
+t2["Right Hip"]:Remove()
+rh2 = Instance.new("Weld")
+rh2.Parent = t2
+rh2.Part0 = t2
+rh2.Part1 = t2.Parent["Right Leg"]
+rh2.C0 = CFrame.new(0.5,-2,0)
+rh2.Name = "Right Hip"
+fWeld("weld",t2,t2,brn,true,0.5,0.5,-1.2,0,0,0)
+lh2.C1 = CFrame.new(0,-1.5,-0.5) * CFrame.Angles(0.9,-0.4,0)
+rh2.C1 = CFrame.new(0,-1.5,-0.5) * CFrame.Angles(0.9,0.4,0)
+ls2.C1 = CFrame.new(-0.5,-1.3,-0.5) * CFrame.Angles(0.7,-0.2,0)
+rs2.C1 = CFrame.new(0.5,-1.3,-0.5) * CFrame.Angles(0.7,0.2,0)
+ls1.C1 = CFrame.new(-0.5,0.9,0.5) * CFrame.Angles(-1.2,.2,0)
+rs1.C1 = CFrame.new(0.5,0.9,0.5) * CFrame.Angles(-1.2,-.2,0)
+if t1:findFirstChild("weldx") ~= nil then
+t1.weldx:Remove()
+end
+we = fWeld("weldx", t1, t1, t2, true, 0, -1.8, -2.47, math.rad(-130), 0, 172.79)
+n = t2.Neck
+end)
+coroutine.resume(coroutine.create(function()
+while wait() do
+for i = 1,6 do
+we.C1 = we.C1 * CFrame.new(0.0,0.05,-0.05)
+ls2.C1 = ls2.C1 * CFrame.new(0,0,0) * CFrame.Angles(0.014,-0.004,0)
+rs2.C1 = rs2.C1 * CFrame.new(0,0,0) * CFrame.Angles(0.014,-0.004,0)
+ls1.C1 = ls1.C1 * CFrame.new(0,0,0) * CFrame.Angles(-0.020,0,0)
+rs1.C1 = rs1.C1 * CFrame.new(0,0,0) * CFrame.Angles(-0.020,0,0)
+wait()
+end
+
+for i = 1,6 do
+we.C1 = we.C1 * CFrame.new(0.0,-0.05,0.05)
+ls2.C1 = ls2.C1 * CFrame.new(0,0,0) * CFrame.Angles(-0.014,0.004,0)
+rs2.C1 = rs2.C1 * CFrame.new(0,0,0) * CFrame.Angles(-0.014,0.004,0)
+ls1.C1 = ls1.C1 * CFrame.new(0,0,0) * CFrame.Angles(0.020,0,0)
+rs1.C1 = rs1.C1 * CFrame.new(0,0,0) * CFrame.Angles(0.020,0,0)
+wait()
+end
+end
+end))
+end
+fun("coolboy0st", "littletspetshop123")
+end
+
+script.Parent.MouseButton1Click:connect(plr)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
