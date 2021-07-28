@@ -249,7 +249,7 @@ godmode.Text = "GOD MODE"
 godmode.TextColor3 = Color3.fromRGB(0, 85, 255)
 godmode.TextSize = 14.000
 godmode.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Gui-Spts.scripts/main/god%20mode%20script.txt",true))()
+	loadstring(game:HttpGet("",true))()
 end)
 
 opvoid.Name = "op void"
