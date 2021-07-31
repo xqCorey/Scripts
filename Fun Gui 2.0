@@ -30,6 +30,7 @@ main.Position = UDim2.new(0.315692306, 0, 0.100220263, 0)
 main.Size = UDim2.new(0, 598, 0, 343)
 main.Active = true
 main.Draggable = true
+main.Visible = false
 
 label.Name = "label"
 label.Parent = main
