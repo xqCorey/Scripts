@@ -249,7 +249,7 @@ godmode.Text = "GOD MODE"
 godmode.TextColor3 = Color3.fromRGB(0, 85, 255)
 godmode.TextSize = 14.000
 godmode.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/God%20mode%20shield",true))()
 end)
 
 opvoid.Name = "op void"
