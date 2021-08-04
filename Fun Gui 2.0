@@ -65,7 +65,7 @@ Aura.TextColor3 = Color3.fromRGB(255, 85, 0)
 Aura.TextSize = 20.000
 Aura.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.Head.RankBbGui.RankImg: Destroy()
-	game.Players.LocalPlayer.Charecter.Head.NameBbGui.NameTxt: Destroy()
+    game.Players.LocalPlayer.Character.Head.NameBbGui.NameTxt: Destroy()
 end)
 
 Gravity.Name = "Gravity"
