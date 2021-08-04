@@ -60,19 +60,12 @@ Aura.BackgroundColor3 = Color3.fromRGB(131, 131, 131)
 Aura.Position = UDim2.new(0.352842808, 0, 0.180758014, 0)
 Aura.Size = UDim2.new(0, 180, 0, 50)
 Aura.Font = Enum.Font.SourceSans
-Aura.Text = "Lightening Aura "
+Aura.Text = "Remove Name & Rank"
 Aura.TextColor3 = Color3.fromRGB(255, 85, 0)
 Aura.TextSize = 20.000
 Aura.MouseButton1Down:connect(function()
-	game.Players.LocalPlayer.character.LeftHand.Aura1: Destroy()
-	game.Players.LocalPlayer.character.RightHand.Aura1: Destroy()
-	game.Players.LocalPlayer.character.LeftUpperLeg.Aura1: Destroy()
-	game.Players.LocalPlayer.character.RightUpperLeg.Aura1: Destroy()
-	game.Players.LocalPlayer.character.UpperTorso.Aura1: Destroy()
-	game.Players.LocalPlayer.character.LeftHand.Aura2: Destroy()
-	game.Players.LocalPlayer.character.RightHand.Aura2: Destroy()
-	game.Players.LocalPlayer.character.LeftHand.Aura2: Destroy()
-	game.Players.LocalPlayer.character.RightHand.Aura2: Destroy()
+	game.Players.LocalPlayer.Character.Head.RankBbGui.RankImg: Destroy()
+	game.Players.LocalPlayer.Charecter.Head.NameBbGui.NameTxt
 end)
 
 Gravity.Name = "Gravity"
