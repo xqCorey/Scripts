@@ -44,3 +44,8 @@ end
 NoKill()
 fixCam()
 CanAttack()
+wait(1)
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+wait()
