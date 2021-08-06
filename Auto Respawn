@@ -1,0 +1,49 @@
+_G.toggled = true --set to false if you want it to stop
+while _G.toggled == true do
+    wait(2)
+    local Return = game:GetService "Players".LocalPlayer.Character.HumanoidRootPart.CFrame
+
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer({[1] = "Respawn"})
+
+    wait(2)
+    repeat
+        wait()
+    until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+
+    game:GetService "Players".LocalPlayer.Character.HumanoidRootPart.CFrame = Return
+    if game.Lighting.Blur.Enabled then
+        wait(1)
+        game.Lighting.Blur.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+    end
+end
+--made by PubIcc aka Sir ummwtf on discord
+
+local Imput = game:GetService("UserInputService")
+Imput.InputBegan:connect(function(inst)
+    if inst.KeyCode == Enum.KeyCode.M then
+    _G.toggled = false --set to false if you want it to stop
+while _G.toggled == true do
+    wait(2)
+    local Return = game:GetService "Players".LocalPlayer.Character.HumanoidRootPart.CFrame
+
+    game:GetService("ReplicatedStorage").RemoteEvent:FireServer({[1] = "Respawn"})
+
+    wait(2)
+    repeat
+        wait()
+    until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+
+    game:GetService "Players".LocalPlayer.Character.HumanoidRootPart.CFrame = Return
+    if game.Lighting.Blur.Enabled then
+        wait(1)
+        game.Lighting.Blur.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+    end
+end
+
+end
+end)
+--made by PubIcc aka Sir ummwtf on discord
