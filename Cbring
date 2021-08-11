@@ -1368,4 +1368,282 @@ PsychicL.MouseButton1Click:Connect(function()
 Selected2.Value = "PLocation"
 end)
 BodyL.MouseButton1Click:Connect(function()
-	if Selected2.Value ==... (12 KB left)
+	if Selected2.Value == "None" then
+		else
+	SPTSGui[Selected2.Value].Visible = false
+	end
+	BLocation.Visible = true
+Selected2.Value = "BLocation"
+end)
+QuestionL.MouseButton1Click:Connect(function()
+	if Selected2.Value == "None" then
+		else
+	SPTSGui[Selected2.Value].Visible = false
+	end
+	QLOCATION.Visible = true
+Selected2.Value = "QLOCATION"
+end)
+CloseL.MouseButton1Click:Connect(function()
+	if Selected2.Value == "None" then
+		else
+	SPTSGui[Selected2.Value].Visible = false
+	end
+Selected2.Value = "None"
+end)
+LocationsB.MouseButton1Click:Connect(function()
+	if LocationFrame.Visible == false then
+		LocationFrame.Visible = true
+	elseif LocationFrame.Visible == true then
+		LocationFrame.Visible = false
+		if Selected2.Value == "None" then
+		else
+		SPTSGui[Selected2.Value].Visible = false
+		end
+	end
+end)
+Credits.MouseButton1Click:Connect(function()
+	if CreditsFrame.Visible == false then
+		CreditsFrame.Visible = true
+	elseif CreditsFrame.Visible == true then
+		CreditsFrame.Visible = false
+	end
+end)
+
+
+
+
+
+
+
+
+
+
+
+KButton.MouseButton1Click:Connect(function()
+	for i = 1,300 do
+		game.Workspace[Name.Text].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+		wait()
+	end
+end)
+KButton6.MouseButton1Click:Connect(function()
+	for i = 1,300 do
+		if game.Workspace[Name.Text].Humanoid.MaxHealth <= game.Players.LocalPlayer.Character.Humanoid.MaxHealth*3 then
+		game.Workspace[Name.Text].HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+		wait()
+		end
+		end
+end)
+
+KButton2.MouseButton1Click:Connect(function()
+	    run = not run
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+    if run then
+    while wait() do
+    if run then
+    tp()
+    end
+    end
+    end
+    end)
+KButton7.MouseButton1Click:Connect(function()
+	    run2 = not run2
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player.Character:FindFirstChild("Humanoid").MaxHealth <= game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run2 then
+    while wait() do
+    if run2 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton3.MouseButton1Click:Connect(function()
+	    run3 = not run3
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value == 0 then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run3 then
+    while wait() do
+    if run3 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton4.MouseButton1Click:Connect(function()
+	    run4 = not run4
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value >= 1 then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run4 then
+    while wait() do
+    if run4 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton5.MouseButton1Click:Connect(function()
+	    run5 = not run5
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value <= -1 then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run5 then
+    while wait() do
+    if run5 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton8.MouseButton1Click:Connect(function()
+	    run6 = not run6
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value == 0 and player.Character:FindFirstChild("Humanoid").MaxHealth <= game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth  then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run6 then
+    while wait() do
+    if run6 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton9.MouseButton1Click:Connect(function()
+	    run7 = not run7
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value >= 1 and player.Character:FindFirstChild("Humanoid").MaxHealth <= game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth  then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run7 then
+    while wait() do
+    if run7 then
+    tp()
+    end
+    end
+    end
+    end)
+KButton10.MouseButton1Click:Connect(function()
+	    run8 = not run8
+    local function tp()
+    for i, player in ipairs(game.Players:GetChildren()) do
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and game.Players[player.Name].PrivateStats.Reputation.Value <= -1 and player.Character:FindFirstChild("Humanoid").MaxHealth <= game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").MaxHealth  then
+    player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
+    end
+    end
+    end
+     
+    if run8 then
+    while wait() do
+    if run8 then
+    tp()
+    end
+    end
+    end
+    end)
+OPEN.MouseButton1Click:Connect(function()
+	if SPTSGui[Selected.Value].Visible == true then
+		SPTSGui[Selected.Value].Visible = false
+	elseif SPTSGui[Selected.Value].Visible == false then
+		SPTSGui[Selected.Value].Visible = true
+	end
+end)
+SafeMode.MouseButton1Click:Connect(function()
+	Selected.Value = "SafeFR"
+	UnSafeFR.Visible = false
+	SafeFR.Visible = true
+end)
+SafeMode_2.MouseButton1Click:Connect(function()
+	Selected.Value = "UnSafeFR"
+	UnSafeFR.Visible = true
+	SafeFR.Visible = false
+end)
+Leak.MouseButton1Click:Connect(function()
+	if Leaks.Visible == true then
+		Leaks.Visible = false
+	elseif Leaks.Visible == false then
+		Leaks.Visible = true
+	end
+end)
+while true do
+if game.Players.LocalPlayer.Character == nil then
+Posbar.Text = "Pos : Not Spawned"
+Healthbar.Text = "Health : Not Spawned"
+else
+	if game.Players[PlrName.Text] == nil then
+		PlrNameStats.Text = "Name : None"
+	else
+		PlrNameStats.Text = "Name :"..game.Players[PlrName.Text].Name
+		Villain.Text = "Villain Killed : "..game.Players[PlrName.Text].PrivateStats.VillainKilled.Value
+		AliveTime.Text = "Alive : "..game.Players[PlrName.Text].PrivateStats.AliveTime.Value.." Mins"
+		Hero.Text = "Hero Killed : "..game.Players[PlrName.Text].PrivateStats.HeroKilled.Value
+		Innocence.Text = "Innocent Killed : "..game.Players[PlrName.Text].PrivateStats.InnocentKilled.Value
+		Rep.Text = "Reputation : "..game.Players[PlrName.Text].PrivateStats.Reputation.Value
+		Status.Text = "Status : "..game.Players[PlrName.Text].leaderstats.Status.Value
+		Fist.Text = "Fist : "..game.Players[PlrName.Text].PrivateStats.FistStrength.Value
+		Psychic.Text = "Psychic : "..game.Players[PlrName.Text].PrivateStats.PsychicPower.Value
+		Jump.Text = "Jump : "..game.Players[PlrName.Text].PrivateStats.JumpForce.Value
+		Speed.Text = "Speed : "..game.Players[PlrName.Text].PrivateStats.MovementSpeed.Value
+		Body.Text = "Body : "..game.Players[PlrName.Text].PrivateStats.BodyToughness.Value
+		Tokens.Text = "Tokens : "..game.Players[PlrName.Text].PrivateStats.Token.Value
+	end
+        if game.Players.LocalPlayer.Character.Humanoid == nil then
+        Healthbar.Text = "Health : Dead"
+        else
+	if game.Players.LocalPlayer.Character.Humanoid.Health <= 999 then
+		Healthbar.Text = "Health : "..math.floor(game.Players.LocalPlayer.Character.Humanoid.Health/1).." ("..math.floor((game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth)*100/1).."%)"
+	elseif game.Players.LocalPlayer.Character.Humanoid.Health <= 999999 then
+		Healthbar.Text = "Health : "..math.floor(game.Players.LocalPlayer.Character.Humanoid.Health/100/10).."K ("..math.floor((game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth)*100/1).."%)"
+	elseif game.Players.LocalPlayer.Character.Humanoid.Health <= 999999999 then
+		Healthbar.Text = "Health : "..math.floor(game.Players.LocalPlayer.Character.Humanoid.Health/100000/10).."M ("..math.floor((game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth)*100/1).."%)"
+	elseif game.Players.LocalPlayer.Character.Humanoid.Health <= 999999999999 then
+		Healthbar.Text = "Health : "..math.floor(game.Players.LocalPlayer.Character.Humanoid.Health/100000000/10).."B ("..math.floor((game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth)*100/1).."%)"
+	else
+		Healthbar.Text = "Health : "..math.floor(game.Players.LocalPlayer.Character.Humanoid.Health/100000000000/10).."T ("..math.floor((game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth)*100/1).."%)"
+		end
+         end
+                if game.Players.LocalPlayer.Character.HumanoidRootPart == nil then
+                Posbar.Text = "Pos : Dead"
+                else
+		Posbar.Text = "Pos : "..math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X/1).." , "..math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y/1).." , "..math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z/1)
+end
+end
+	wait(.5)
+	
+end
