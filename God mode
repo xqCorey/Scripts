@@ -1,0 +1,10 @@
+_G.main = true 
+while _G.main do 
+wait()
+local children = game:GetService("ReplicatedStorage"):GetChildren()
+for i, child in ipairs(children) do
+    if child.Name == "GhostRiderPart" then
+child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end 
+end
