@@ -1,0 +1,51 @@
+stopQuest = true;
+
+function NoKill()
+    local Character = game:GetService'Players'.LocalPlayer.Character
+    local mt = getrawmetatable(game)
+    local OldIndex = mt.__index
+    local OldNameCall = mt.__namecall
+    
+    setreadonly(mt, false)
+    
+    mt.__namecall = newcclosure(function(Self,...)
+        local args = {...}
+        local NameCallMethod = getnamecallmethod()
+        if not checkcaller() and Self == Character and NameCallMethod == "BreakJoints" then
+            return nil
+        end
+        return OldNameCall(Self,...)  
+    
+    end)
+    
+    setreadonly(mt, true)
+end
+
+function fixCam()
+    local CurrentCamera = workspace.CurrentCamera;
+    CurrentCamera.CameraSubject = game.Players['LocalPlayer'].Character.Humanoid
+    CurrentCamera.CameraType = Enum.CameraType.Custom
+end
+
+function SetSpeed(speed)
+    local isSpeed = assert(tonumber(speed), 'Must be a number')
+   game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(speed) 
+end
+
+function CanAttack()
+    local MainScript = game:GetService("Players").LocalPlayer.PlayerScripts.MainScript
+    
+    while stopQuest do
+        wait(0.01)
+        getsenv(MainScript).TalkingOnQuest = false;
+    end
+end
+
+NoKill()
+fixCam()
+CanAttack()
+wait(1)
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+wait()
