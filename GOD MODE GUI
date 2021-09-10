@@ -65,17 +65,7 @@ GOD.Text = "| God Mode Text |"
 GOD.TextColor3 = Color3.fromRGB(170, 0, 255)
 GOD.TextSize = 19.000
 GOD.MouseButton1Click:connect(function()
-	_G.main = true 
-	while _G.main do 
-		wait()
-		local children = game:GetService("ReplicatedStorage"):GetChildren()
-		for i, child in ipairs(children) do
-			if child.Name == "GhostRiderPart" then
-				child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-			end
-		end 
-	end
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/God%20Button", true))()
 end)
 
 Frame.Parent = Main
@@ -131,7 +121,7 @@ ShieldMove.Text = "| Walk |"
 ShieldMove.TextColor3 = Color3.fromRGB(170, 0, 255)
 ShieldMove.TextSize = 19.000
 ShieldMove.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/God%20Button", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/God%20mode%20shield", true))()
 end)
 
 -- Scripts:
