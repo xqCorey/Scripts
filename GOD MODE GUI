@@ -1,0 +1,173 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local GodMode = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Label = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local GOD = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local speed = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Text = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local ShieldMove = Instance.new("TextButton")
+
+--Properties:
+
+GodMode.Name = "GodMode"
+GodMode.Parent = game.CoreGui
+GodMode.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = GodMode
+Main.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Main.BorderColor3 = Color3.fromRGB(125, 64, 186)
+Main.BorderSizePixel = 3
+Main.Position = UDim2.new(0.527395904, 0, 0.442731261, 0)
+Main.Size = UDim2.new(0, 407, 0, 261)
+Main.Active = true
+Main.Draggable = true
+
+Label.Name = "Label"
+Label.Parent = Main
+Label.BackgroundColor3 = Color3.fromRGB(76, 76, 76)
+Label.BorderColor3 = Color3.fromRGB(34, 34, 34)
+Label.BorderSizePixel = 0
+Label.Size = UDim2.new(0, 366, 0, 33)
+Label.Font = Enum.Font.SourceSans
+Label.Text = "GOD MODE| MINI GUI| Version 1.1"
+Label.TextColor3 = Color3.fromRGB(170, 0, 255)
+Label.TextSize = 21.000
+
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.901267111, 0, 0, 0)
+Close.Size = UDim2.new(0, 40, 0, 33)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 21.000
+
+GOD.Name = "GOD"
+GOD.Parent = Main
+GOD.BackgroundColor3 = Color3.fromRGB(76, 76, 76)
+GOD.BorderColor3 = Color3.fromRGB(170, 0, 255)
+GOD.BorderSizePixel = 3
+GOD.Position = UDim2.new(0.0483383685, 0, 0.231800795, 0)
+GOD.Size = UDim2.new(0, 156, 0, 50)
+GOD.Font = Enum.Font.SourceSans
+GOD.Text = "| God Mode Text |"
+GOD.TextColor3 = Color3.fromRGB(170, 0, 255)
+GOD.TextSize = 19.000
+GOD.MouseButton1Click:connect(function()
+	_G.main = true 
+	while _G.main do 
+		wait()
+		local children = game:GetService("ReplicatedStorage"):GetChildren()
+		for i, child in ipairs(children) do
+			if child.Name == "GhostRiderPart" then
+				child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			end
+		end 
+	end
+
+end)
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Frame.BorderColor3 = Color3.fromRGB(170, 0, 255)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.508740187, 0, 0.231800765, 0)
+Frame.Size = UDim2.new(0, 186, 0, 172)
+
+speed.Name = "speed"
+speed.Parent = Frame
+speed.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+speed.Position = UDim2.new(0.0599476807, 0, 0.540881157, 0)
+speed.Size = UDim2.new(0, 163, 0, 42)
+speed.Font = Enum.Font.SourceSans
+speed.Text = ""
+speed.TextColor3 = Color3.fromRGB(0, 0, 0)
+speed.TextSize = 14.000
+
+UICorner.Parent = speed
+
+Text.Name = "Text"
+Text.Parent = Frame
+Text.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Text.BorderColor3 = Color3.fromRGB(34, 34, 34)
+Text.BorderSizePixel = 0
+Text.Position = UDim2.new(0, 0, 0.0695584342, 0)
+Text.Size = UDim2.new(0, 185, 0, 60)
+Text.Font = Enum.Font.SourceSans
+Text.Text = "Toggle Shield Visibility"
+Text.TextColor3 = Color3.fromRGB(170, 0, 255)
+Text.TextSize = 19.000
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0442260429, 0, 0.46360153, 0)
+TextLabel.Size = UDim2.new(0, 157, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = ":))))))"
+TextLabel.TextColor3 = Color3.fromRGB(170, 0, 255)
+TextLabel.TextSize = 27.000
+
+ShieldMove.Name = "ShieldMove"
+ShieldMove.Parent = Main
+ShieldMove.BackgroundColor3 = Color3.fromRGB(76, 76, 76)
+ShieldMove.BorderColor3 = Color3.fromRGB(170, 0, 255)
+ShieldMove.BorderSizePixel = 3
+ShieldMove.Position = UDim2.new(0.0483383685, 0, 0.699233711, 0)
+ShieldMove.Size = UDim2.new(0, 156, 0, 50)
+ShieldMove.Font = Enum.Font.SourceSans
+ShieldMove.Text = "| Walk |"
+ShieldMove.TextColor3 = Color3.fromRGB(170, 0, 255)
+ShieldMove.TextSize = 19.000
+ShieldMove.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xqCorey/Scripts/Main/God%20Button", true))()
+end)
+
+-- Scripts:
+
+local function QOFT_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(QOFT_fake_script)()
+local function SYKY_fake_script() -- speed.LocalScript 
+	local script = Instance.new('LocalScript', speed)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	
+		if toggle == true then
+			game.Players.LocalPlayer.Character.GodModeShield.Visible = false
+		end
+		if toggle == false then 
+			game.Players.LocalPlayer.Character.GodModeShield.Visible = false
+		end
+	end)
+end
+coroutine.wrap(SYKY_fake_script)()
