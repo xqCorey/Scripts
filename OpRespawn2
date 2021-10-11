@@ -1,0 +1,9 @@
+while true do 
+    wait()
+local function main()
+local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local currenthealth = tonumber(string.format("%.0f", FindHum.Health))
+local minhealth = tonumber(string.format("%.0f", FindHum.MaxHealth))*tonumber(85)/100
+if currenthealth <= minhealth then 
+    momentorespawn = true
+end 
