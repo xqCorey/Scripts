@@ -1,0 +1,223 @@
+-- Corey Psychic Gui UWU
+-- Version: 1.0
+
+-- Instances:
+
+local CoreysPsychicGuiUWU = Instance.new("ScreenGui")
+local MainFrame1 = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local Target = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local Close = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Psychic = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local Psy_Tog = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Teleport = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local Tel_Tog = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+
+--Properties:
+
+CoreysPsychicGuiUWU.Name = "Coreys Psychic Gui | UWU"
+CoreysPsychicGuiUWU.Parent = game.CoreGui
+CoreysPsychicGuiUWU.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame1.Name = "MainFrame1"
+MainFrame1.Parent = CoreysPsychicGuiUWU
+MainFrame1.BackgroundColor3 = Color3.fromRGB(76, 76, 76)
+MainFrame1.Position = UDim2.new(0.34412697, 0, 0.406387657, 0)
+MainFrame1.Size = UDim2.new(0, 351, 0, 203)
+MainFrame1.Active = true
+MainFrame1.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = MainFrame1
+Title.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Title.Size = UDim2.new(0, 351, 0, 39)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Corey's Psychic script| Version UWU"
+Title.TextColor3 = Color3.fromRGB(171, 86, 255)
+Title.TextSize = 19.000
+
+UICorner.Parent = Title
+
+Target.Name = "Target"
+Target.Parent = MainFrame1
+Target.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Target.Position = UDim2.new(0.0802752301, 0, 0.69458127, 0)
+Target.Size = UDim2.new(0, 293, 0, 32)
+Target.Font = Enum.Font.SourceSans
+Target.Text = ""
+Target.TextColor3 = Color3.fromRGB(171, 86, 255)
+Target.TextSize = 21.000
+
+UICorner_2.Parent = Target
+
+Close.Name = "Close"
+Close.Parent = MainFrame1
+Close.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+Close.Position = UDim2.new(0.873441517, 0, 0.0344827585, 0)
+Close.Size = UDim2.new(0, 35, 0, 24)
+Close.Font = Enum.Font.SourceSans
+Close.Text = ""
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+
+UICorner_3.Parent = Close
+
+Psychic.Name = "Psychic"
+Psychic.Parent = MainFrame1
+Psychic.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Psychic.Position = UDim2.new(0.165745407, 0, 0.467980295, 0)
+Psychic.Size = UDim2.new(0, 232, 0, 35)
+Psychic.Font = Enum.Font.SourceSans
+Psychic.Text = "    Psychic Spam"
+Psychic.TextColor3 = Color3.fromRGB(171, 86, 255)
+Psychic.TextSize = 19.000
+Psychic.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_4.Parent = Psychic
+
+Psy_Tog.Name = "Psy_Tog"
+Psy_Tog.Parent = Psychic
+Psy_Tog.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Psy_Tog.Position = UDim2.new(0.783909082, 0, 0.121212125, 0)
+Psy_Tog.Size = UDim2.new(0, 42, 0, 25)
+Psy_Tog.Font = Enum.Font.SourceSans
+Psy_Tog.Text = ""
+Psy_Tog.TextColor3 = Color3.fromRGB(0, 0, 0)
+Psy_Tog.TextSize = 14.000
+
+UICorner_5.Parent = Psy_Tog
+
+UICorner_6.Parent = MainFrame1
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(199, 166, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(199, 166, 255))}
+UIGradient.Parent = MainFrame1
+
+Teleport.Name = "Teleport"
+Teleport.Parent = MainFrame1
+Teleport.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Teleport.Position = UDim2.new(0.168594405, 0, 0.251231521, 0)
+Teleport.Size = UDim2.new(0, 232, 0, 35)
+Teleport.Font = Enum.Font.SourceSans
+Teleport.Text = "   Teleport Spam"
+Teleport.TextColor3 = Color3.fromRGB(171, 86, 255)
+Teleport.TextSize = 19.000
+Teleport.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_7.Parent = Teleport
+
+Tel_Tog.Name = "Tel_Tog"
+Tel_Tog.Parent = Teleport
+Tel_Tog.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Tel_Tog.Position = UDim2.new(0.783909082, 0, 0.121212125, 0)
+Tel_Tog.Size = UDim2.new(0, 42, 0, 25)
+Tel_Tog.Font = Enum.Font.SourceSans
+Tel_Tog.Text = ""
+Tel_Tog.TextColor3 = Color3.fromRGB(0, 0, 0)
+Tel_Tog.TextSize = 14.000
+
+UICorner_8.Parent = Tel_Tog
+
+-- Scripts:
+
+local function ZRBN_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(ZRBN_fake_script)()
+local function NRUMAD_fake_script() -- Psy_Tog.LocalScript 
+	local script = Instance.new('LocalScript', Psy_Tog)
+
+	toggle = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggle == true then 
+			toggle = false 
+		else
+			toggle = true
+		end
+		if toggle == true then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+            --Psychic Script-
+            while toggle do
+                wait()
+                for i,v in pairs(game.Players:GetPlayers()) do
+                    pcall(function()
+                game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_Start",game.Players[Target.Text]})
+                game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_SoulAttack_End"})
+                end)
+                
+                wait(0)
+                end
+                end
+		end
+		if toggle == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	
+		if toggle == true then
+			--Toggle Off--
+		end
+		if toggle == false then 
+			--Toggle On--
+		end
+	end)
+	
+end
+coroutine.wrap(NRUMAD_fake_script)()
+local function EONHH_fake_script() -- UICorner_6.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+	
+end
+coroutine.wrap(EONHH_fake_script)()
+local function LIWCD_fake_script() -- Tel_Tog.LocalScript 
+	local script = Instance.new('LocalScript', Tel_Tog)
+
+	toggleTP = false
+	script.Parent.MouseButton1Down:connect(function()
+	
+		if toggleTP == true then 
+			toggleTP = false 
+		else
+			toggleTP = true
+		end
+		if toggleTP == true then
+			script.Parent.BackgroundColor3 = Color3.fromRGB(0, 255, 0) 
+			while toggleTP do 
+    			wait()
+				local function annoy()
+    				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Target.Text].Character.HumanoidRootPart.CFrame
+				end 
+				delay(0, annoy)
+			end 
+		end
+		if toggleTP == false then 
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	
+		if toggleTP == true then
+			--Toggle Off--
+		end
+		if toggleTP == false then 
+			--Toggle On--
+		end
+	end)
+	
+	
+end
+coroutine.wrap(LIWCD_fake_script)()
