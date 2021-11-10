@@ -1,0 +1,13 @@
+_G.on = 1
+while _G.on == 1 do
+
+local args = {
+    [1] = {
+        [1] = "Skill_SpherePunch",
+        [2] = Vector3.new(-22.668518066406, 237.99996948242, 1894.1096191406)
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+end
