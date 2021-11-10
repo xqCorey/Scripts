@@ -1,45 +1,84 @@
 _G.on = 1
-    while _G.on == 1 do
-    local args = {
-        [1] = {
-            [1] = "+FS6"
-        }
+while _G.on == 1 do
+
+wait()
+
+local args = {
+    [1] = {
+        [1] = "Skill_SpherePunch",
+        [2] = Vector3.new(-144,72,54)
     }
-    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+}
 
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(-64, 40.059631, 69.671082)
-        }
+local args = {
+    [1] = {
+        [1] = "Skill_SpherePunch",
+        [2] = Vector3.new(-144,72,54)
     }
+}
 
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
-
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Left"
-        }
+local args = {
+    [1] = {
+        [1] = "Skill_SpherePunch",
+        [2] = Vector3.new(-144,72,54)
     }
+}
 
-    Remote:FireServer(unpack(Arguments))
-    wait()
-    local Remote = game.ReplicatedStorage["RemoteEvent"]
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 
-    local Arguments = {
-        [1] = {
-            [1] = "Skill_Punch",
-            [2] = "Right"
-        }
+
+local args = {
+    [1] = {
+        [1] = "Skill_Punch",
+        [2] = "Right"
     }
-    wait()
-    Remote:FireServer(unpack(Arguments))
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        [1] = "Skill_Punch",
+        [2] = "Left"
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        [1] = "Skill_SpherePunch",
+        [2] = Vector3.new(-144,72,54)
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        [1] = "Skill_BulletPunch",
+        [2] = "Left",
+        [3] = Vector3.new(-144,72,54)
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+
+local args = {
+    [1] = {
+        [1] = "Skill_BulletPunch",
+        [2] = "Right",
+        [3] = Vector3.new(-144,72,54)
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
