@@ -1,0 +1,22 @@
+_G.on = 0
+while _G.on == 1 do
+                if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+                game.Players.LocalPlayer.Character.ForceField:Destroy()
+            end
+        local ohTable1 = {
+            [1] = "Skill_Punch",
+            [2] = "Right"
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvent:FireServer(ohTable1)
+        wait()
+        if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+        if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+        local ohTable2 = {
+            [1] = "Respawn"
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvent:FireServer(ohTable2)
+        end
+        end
+end
