@@ -1,0 +1,688 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local FGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Rainbow = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local TpSpam = Instance.new("TextButton")
+local UIGradient_2 = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+local This1 = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local FSpam = Instance.new("TextButton")
+local UIGradient_3 = Instance.new("UIGradient")
+local UICorner_3 = Instance.new("UICorner")
+local This2 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local NameEnter = Instance.new("TextBox")
+local CloseGui = Instance.new("TextButton")
+
+--Properties:
+
+FGui.Name = "FGui"
+FGui.Parent = game.CoreGui
+FGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = FGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+MainFrame.BorderSizePixel = 5
+MainFrame.Position = UDim2.new(0.368291169, 0, 0.357055217, 0)
+MainFrame.Size = UDim2.new(0, 389, 0, 232)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+Rainbow.Name = "Rainbow"
+Rainbow.Parent = MainFrame
+Rainbow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Rainbow.Size = UDim2.new(0, 389, 0, 47)
+Rainbow.Font = Enum.Font.SourceSans
+Rainbow.Text = "F Spammer + TpSpam"
+Rainbow.TextColor3 = Color3.fromRGB(0, 0, 0)
+Rainbow.TextSize = 25.000
+Rainbow.TextStrokeColor3 = Color3.fromRGB(227, 227, 227)
+Rainbow.TextStrokeTransparency = 0.000
+
+UIGradient.Parent = Rainbow
+
+TpSpam.Name = "TpSpam"
+TpSpam.Parent = MainFrame
+TpSpam.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TpSpam.Position = UDim2.new(0.0925449803, 0, 0.74568969, 0)
+TpSpam.Size = UDim2.new(0, 281, 0, 42)
+TpSpam.Font = Enum.Font.SourceSans
+TpSpam.Text = "Tp Spam Toggle"
+TpSpam.TextColor3 = Color3.fromRGB(0, 0, 0)
+TpSpam.TextSize = 20.000
+
+UIGradient_2.Parent = TpSpam
+
+UICorner.Parent = TpSpam
+
+This1.Name = "This1"
+This1.Parent = MainFrame
+This1.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+This1.Position = UDim2.new(0.850497246, 0, 0.745689631, 0)
+This1.Size = UDim2.new(0, 49, 0, 42)
+
+UICorner_2.Parent = This1
+
+FSpam.Name = "FSpam"
+FSpam.Parent = MainFrame
+FSpam.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FSpam.Position = UDim2.new(0.0925449803, 0, 0.504310369, 0)
+FSpam.Size = UDim2.new(0, 281, 0, 42)
+FSpam.Font = Enum.Font.SourceSans
+FSpam.Text = "Sphere Punch Spam"
+FSpam.TextColor3 = Color3.fromRGB(0, 0, 0)
+FSpam.TextSize = 20.000
+
+UIGradient_3.Parent = FSpam
+
+UICorner_3.Parent = FSpam
+
+This2.Name = "This2"
+This2.Parent = MainFrame
+This2.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+This2.Position = UDim2.new(0.850497246, 0, 0.50431031, 0)
+This2.Size = UDim2.new(0, 49, 0, 42)
+
+UICorner_4.Parent = This2
+
+NameEnter.Name = "NameEnter"
+NameEnter.Parent = MainFrame
+NameEnter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameEnter.Position = UDim2.new(0.25449872, 0, 0.262931049, 0)
+NameEnter.Size = UDim2.new(0, 218, 0, 40)
+NameEnter.Font = Enum.Font.SourceSans
+NameEnter.PlaceholderText = "Enter A Name..."
+NameEnter.Text = ""
+NameEnter.TextColor3 = Color3.fromRGB(0, 0, 255)
+NameEnter.TextSize = 35.000
+
+CloseGui.Name = "Close Gui"
+CloseGui.Parent = MainFrame
+CloseGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseGui.BackgroundTransparency = 1.000
+CloseGui.BorderSizePixel = 0
+CloseGui.Position = UDim2.new(0.88174808, 0, 0.043103449, 0)
+CloseGui.Size = UDim2.new(0, 36, 0, 27)
+CloseGui.Font = Enum.Font.SourceSans
+CloseGui.Text = "X"
+CloseGui.TextColor3 = Color3.fromRGB(0, 0, 0)
+CloseGui.TextSize = 39.000
+
+-- Scripts:
+
+local function XFCQBV_fake_script() -- Rainbow.LocalScript 
+	local script = Instance.new('LocalScript', Rainbow)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset)
+	local startingPos = Vector2.new(-1, 0)
+	local list = {} --list of random colors (we'll be generating them shortly after)
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	local counter = 0 --count the last table index we just indexed/last gradient color reference
+	local status = "down" --[[there will be two groups of if statements (one above and one below). 
+	It glitches out some times and runs the same group multiple times, so we need this. ]] 
+	gradient.Offset = startingPos --reset the offset of the gradient
+	
+	local function rainbowColors()
+	
+	    --[[HSV uses values 0-1, but we'll use until 255 and divide later to 
+	    better control the colors.]]
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do --15 is a multiple of 255
+	
+			local hue = i * 17 --255/15 = 17
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255)) --divide by 255 to be in range of 0-1
+	
+		end
+	
+	end
+	
+	rainbowColors() --add to the list table
+	
+	--set up the first gradient 
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+		kpt(0.5, list[#list - 1]),
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list --max indexed is #list, which is 10 in this instanceprint("Hello world!")
+	
+	local function animate()
+	
+		create:Play()
+		create.Completed:Wait() --wait for tween completion
+		gradient.Offset = startingPos 
+		gradient.Rotation = 180 --flip time!
+	
+	    --[[#list - 1 because we have 3 key points, 1 will be preserved from 
+	    the previous tween, while the other 2 are new. We need to make 
+	    sure that indexing something beyond #list doesn't happen as it will 
+	    throw an error. In this instance, it will be 9, 10, and instead of it looking
+	    for 11, it will go back to 1.]]
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value), --preserve previous color, which we'll be able to see
+				kpt(0.5, list[#list]), --change this color behind the scenes!
+				kpt(1, list[1]) --change this color behind the scenes!
+	
+			})
+	
+			counter = 1 --last index is 1 i.e. list[1]
+			status = "up" --the upper section already ran, time for the lower!
+	
+		elseif counter == #list and status == "down" then --if the current counter is exactly 10 (in this instance), then it will go back to 1 and 2
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[1]),
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then  --in all other cases, when couter is 1-8
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[counter + 1]), --one color over
+				kpt(1, list[counter + 2]) --two colors over
+	
+			})
+	
+			counter = counter + 2
+			status = "up"
+	
+		end
+	
+		create:Play()
+		create.Completed:Wait()
+		gradient.Offset = startingPos
+		gradient.Rotation = 0 --flip time again!
+	
+		if counter == #list - 1 and status == "up" then --same as before, really, but instead of "down", it's "up", since the upper section already ran
+	
+			gradient.Color = s({
+	
+				--descending order because now it's rotation 0
+				kpt(0, list[1]), --1
+				kpt(0.5, list[#list]), --10
+				kpt(1, gradient.Color.Keypoints[3].Value) --put this at #3 because we just flipped rotation, so this color will be at the opposite side
+	
+			})
+	
+			counter = 1
+			status = "down" --below section already ran, back to the top!
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]), --2
+				kpt(0.5, list[1]), --1
+				kpt(1, gradient.Color.Keypoints[3].Value) --10
+	
+			})
+	
+			counter = 2
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then --in all other cases like before
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+				kpt(0.5, list[counter + 1]), 
+				kpt(1, gradient.Color.Keypoints[3].Value) 
+	
+			})
+	
+			counter = counter + 2
+			status = "down"
+	
+		end
+	
+		animate() --call the function inside of itself, so that it runs indefinitely
+	
+	end
+	
+	animate() --call the function initially 
+end
+coroutine.wrap(XFCQBV_fake_script)()
+local function XHCW_fake_script() -- TpSpam.BackGroundRainbow2 
+	local script = Instance.new('LocalScript', TpSpam)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset)
+	local startingPos = Vector2.new(-1, 0)
+	local list = {} --list of random colors (we'll be generating them shortly after)
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	local counter = 0 --count the last table index we just indexed/last gradient color reference
+	local status = "down" --[[there will be two groups of if statements (one above and one below). 
+	It glitches out some times and runs the same group multiple times, so we need this. ]] 
+	gradient.Offset = startingPos --reset the offset of the gradient
+	
+	local function rainbowColors()
+	
+	    --[[HSV uses values 0-1, but we'll use until 255 and divide later to 
+	    better control the colors.]]
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do --15 is a multiple of 255
+	
+			local hue = i * 17 --255/15 = 17
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255)) --divide by 255 to be in range of 0-1
+	
+		end
+	
+	end
+	
+	rainbowColors() --add to the list table
+	
+	--set up the first gradient 
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+		kpt(0.5, list[#list - 1]),
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list --max indexed is #list, which is 10 in this instanceprint("Hello world!")
+	
+	local function animate()
+	
+		create:Play()
+		create.Completed:Wait() --wait for tween completion
+		gradient.Offset = startingPos 
+		gradient.Rotation = 180 --flip time!
+	
+	    --[[#list - 1 because we have 3 key points, 1 will be preserved from 
+	    the previous tween, while the other 2 are new. We need to make 
+	    sure that indexing something beyond #list doesn't happen as it will 
+	    throw an error. In this instance, it will be 9, 10, and instead of it looking
+	    for 11, it will go back to 1.]]
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value), --preserve previous color, which we'll be able to see
+				kpt(0.5, list[#list]), --change this color behind the scenes!
+				kpt(1, list[1]) --change this color behind the scenes!
+	
+			})
+	
+			counter = 1 --last index is 1 i.e. list[1]
+			status = "up" --the upper section already ran, time for the lower!
+	
+		elseif counter == #list and status == "down" then --if the current counter is exactly 10 (in this instance), then it will go back to 1 and 2
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[1]),
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then  --in all other cases, when couter is 1-8
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[counter + 1]), --one color over
+				kpt(1, list[counter + 2]) --two colors over
+	
+			})
+	
+			counter = counter + 2
+			status = "up"
+	
+		end
+	
+		create:Play()
+		create.Completed:Wait()
+		gradient.Offset = startingPos
+		gradient.Rotation = 0 --flip time again!
+	
+		if counter == #list - 1 and status == "up" then --same as before, really, but instead of "down", it's "up", since the upper section already ran
+	
+			gradient.Color = s({
+	
+				--descending order because now it's rotation 0
+				kpt(0, list[1]), --1
+				kpt(0.5, list[#list]), --10
+				kpt(1, gradient.Color.Keypoints[3].Value) --put this at #3 because we just flipped rotation, so this color will be at the opposite side
+	
+			})
+	
+			counter = 1
+			status = "down" --below section already ran, back to the top!
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]), --2
+				kpt(0.5, list[1]), --1
+				kpt(1, gradient.Color.Keypoints[3].Value) --10
+	
+			})
+	
+			counter = 2
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then --in all other cases like before
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+				kpt(0.5, list[counter + 1]), 
+				kpt(1, gradient.Color.Keypoints[3].Value) 
+	
+			})
+	
+			counter = counter + 2
+			status = "down"
+	
+		end
+	
+		animate() --call the function inside of itself, so that it runs indefinitely
+	
+	end
+	
+	animate() --call the function initially 
+end
+coroutine.wrap(XHCW_fake_script)()
+local function FNSRFDM_fake_script() -- TpSpam.LocalScript 
+	local script = Instance.new('LocalScript', TpSpam)
+
+	local button = script.Parent
+	local Target = script.Parent.Parent.NameEnter
+	local Toggle = false
+	local bac = script.Parent.Parent.This1
+	
+	button.MouseButton1Up:Connect(function()
+		if Toggle == false then
+			Toggle = true
+			_G.on = true
+			while _G.on == true do
+				wait()
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Target.Text].Character.HumanoidRootPart.CFrame
+			end
+			bac.BackgroundColor3 = Color3.fromRGB(85, 255, 127)
+			
+			
+		else
+			if Toggle == true then
+				Toggle = false
+				_G.on = false
+				bac.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+			end
+		end
+	end)
+	
+	
+end
+coroutine.wrap(FNSRFDM_fake_script)()
+local function GQLTCOI_fake_script() -- FSpam.BackGroundRainbow 
+	local script = Instance.new('LocalScript', FSpam)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset)
+	local startingPos = Vector2.new(-1, 0)
+	local list = {} --list of random colors (we'll be generating them shortly after)
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	local counter = 0 --count the last table index we just indexed/last gradient color reference
+	local status = "down" --[[there will be two groups of if statements (one above and one below). 
+	It glitches out some times and runs the same group multiple times, so we need this. ]] 
+	gradient.Offset = startingPos --reset the offset of the gradient
+	
+	local function rainbowColors()
+	
+	    --[[HSV uses values 0-1, but we'll use until 255 and divide later to 
+	    better control the colors.]]
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do --15 is a multiple of 255
+	
+			local hue = i * 17 --255/15 = 17
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255)) --divide by 255 to be in range of 0-1
+	
+		end
+	
+	end
+	
+	rainbowColors() --add to the list table
+	
+	--set up the first gradient 
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+		kpt(0.5, list[#list - 1]),
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list --max indexed is #list, which is 10 in this instanceprint("Hello world!")
+	
+	local function animate()
+	
+		create:Play()
+		create.Completed:Wait() --wait for tween completion
+		gradient.Offset = startingPos 
+		gradient.Rotation = 180 --flip time!
+	
+	    --[[#list - 1 because we have 3 key points, 1 will be preserved from 
+	    the previous tween, while the other 2 are new. We need to make 
+	    sure that indexing something beyond #list doesn't happen as it will 
+	    throw an error. In this instance, it will be 9, 10, and instead of it looking
+	    for 11, it will go back to 1.]]
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value), --preserve previous color, which we'll be able to see
+				kpt(0.5, list[#list]), --change this color behind the scenes!
+				kpt(1, list[1]) --change this color behind the scenes!
+	
+			})
+	
+			counter = 1 --last index is 1 i.e. list[1]
+			status = "up" --the upper section already ran, time for the lower!
+	
+		elseif counter == #list and status == "down" then --if the current counter is exactly 10 (in this instance), then it will go back to 1 and 2
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[1]),
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then  --in all other cases, when couter is 1-8
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+				kpt(0.5, list[counter + 1]), --one color over
+				kpt(1, list[counter + 2]) --two colors over
+	
+			})
+	
+			counter = counter + 2
+			status = "up"
+	
+		end
+	
+		create:Play()
+		create.Completed:Wait()
+		gradient.Offset = startingPos
+		gradient.Rotation = 0 --flip time again!
+	
+		if counter == #list - 1 and status == "up" then --same as before, really, but instead of "down", it's "up", since the upper section already ran
+	
+			gradient.Color = s({
+	
+				--descending order because now it's rotation 0
+				kpt(0, list[1]), --1
+				kpt(0.5, list[#list]), --10
+				kpt(1, gradient.Color.Keypoints[3].Value) --put this at #3 because we just flipped rotation, so this color will be at the opposite side
+	
+			})
+	
+			counter = 1
+			status = "down" --below section already ran, back to the top!
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]), --2
+				kpt(0.5, list[1]), --1
+				kpt(1, gradient.Color.Keypoints[3].Value) --10
+	
+			})
+	
+			counter = 2
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then --in all other cases like before
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+				kpt(0.5, list[counter + 1]), 
+				kpt(1, gradient.Color.Keypoints[3].Value) 
+	
+			})
+	
+			counter = counter + 2
+			status = "down"
+	
+		end
+	
+		animate() --call the function inside of itself, so that it runs indefinitely
+	
+	end
+	
+	animate() --call the function initially 
+end
+coroutine.wrap(GQLTCOI_fake_script)()
+local function LZESX_fake_script() -- FSpam.LocalScript 
+	local script = Instance.new('LocalScript', FSpam)
+
+	local button = script.Parent
+	local Target = script.Parent.Parent.NameEnter
+	local Toggle = false
+	local bac = script.Parent.Parent.This2
+	
+	button.MouseButton1Up:Connect(function()
+		if Toggle == false then
+			Toggle = true
+			bac.BackgroundColor3 = Color3.fromRGB(85, 255, 127)
+			_G.on = true
+			while _G.on == true do 
+				wait()
+				local Name = game.Players[Target.Text].Character.HumanoidRootPart
+	
+				local function wow()
+					local Remote = game.ReplicatedStorage['RemoteEvent']
+					local Arguments = {
+						[1] = {
+							[1] = "Skill_Punch",
+							[2] = "Left"
+						}
+					}
+	
+					Remote:FireServer(unpack(Arguments))
+					wait()
+					local Remote = game.ReplicatedStorage['RemoteEvent']
+	
+					local Arguments = {
+						[1] = {
+							[1] = "Skill_BulletPunch",
+							[2] = "Right",
+							[3] = Name.position
+						}
+					}
+	
+					Remote:FireServer(unpack(Arguments))
+					wait()
+					local Remote = game.ReplicatedStorage['RemoteEvent']
+	
+					local Arguments = {
+						[1] = {
+							[1] = "Skill_BulletPunch",
+							[2] = "Left",
+							[3] = Name.position
+						}
+					}
+	
+					Remote:FireServer(unpack(Arguments))
+				end 
+				delay(0, wow)
+			end 
+	
+	
+		else
+			if Toggle == true then
+				Toggle = false
+				_G.on = false
+				bac.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+			end
+		end
+	end)
+	
+	
+end
+coroutine.wrap(LZESX_fake_script)()
+local function UPCL_fake_script() -- CloseGui.LocalScript 
+	local script = Instance.new('LocalScript', CloseGui)
+
+	local button = script.Parent
+	local Thinng = script.Parent.Parent.Parent.Parent.FGui
+	button.MouseButton1Up:Connect(function()
+		Thinng:Destroy()
+	end)
+	
+end
+coroutine.wrap(UPCL_fake_script)()
